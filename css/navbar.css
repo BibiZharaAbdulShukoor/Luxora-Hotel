@@ -1,0 +1,787 @@
+/* ==========================================================
+   LUXORA — SHARED NAVBAR
+   Responsive / Dark Mode / Mobile Menu
+   ========================================================== */
+
+.luxora-hotel-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5000;
+
+  color: #ffffff;
+
+  background: transparent;
+
+  transition:
+    background 0.35s ease,
+    backdrop-filter 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.luxora-hotel-header.scrolled {
+  background: rgba(13, 16, 14, 0.92);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================
+   NAVBAR CONTAINER
+   ========================================================== */
+
+.luxora-nav {
+  width: min(1400px, calc(100% - 80px));
+
+  min-height: 88px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.luxora-brand {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.luxora-brand-mark {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #b89554;
+
+  color: #d4af6a;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+.luxora-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.luxora-brand-text strong {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+.luxora-brand-text small {
+  margin-top: 5px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 6px;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+}
+
+/* ==========================================================
+   NAV PANEL
+   ========================================================== */
+
+.luxora-nav-panel {
+  display: flex;
+  align-items: center;
+
+  gap: 42px;
+
+  margin-left: auto;
+}
+
+/* ==========================================================
+   NAV LINKS
+   ========================================================== */
+
+.lux-nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.lux-nav-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 40px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.lux-nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 4px;
+
+  width: 0;
+  height: 1px;
+
+  background: #d4af6a;
+
+  transition: width 0.3s ease;
+}
+
+.lux-nav-link:hover {
+  color: #ffffff;
+}
+
+.lux-nav-link:hover::after,
+.lux-nav-link.active::after {
+  width: 100%;
+}
+
+.lux-nav-link.active {
+  color: #ffffff;
+}
+
+/* ==========================================================
+   NAV ACTIONS
+   ========================================================== */
+
+.luxora-nav-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   AUTH
+   ========================================================== */
+
+.luxora-auth {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.luxora-login {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 14px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.luxora-login:hover {
+  color: #d4af6a;
+}
+
+.luxora-signup {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 17px;
+
+  border: 1px solid #b89554;
+
+  background: #b89554;
+
+  color: #11130f;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.luxora-signup:hover {
+  background: #d4af6a;
+  border-color: #d4af6a;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   LOGGED-IN ACCOUNT
+   ========================================================== */
+
+.luxora-account {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  color: #ffffff;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.luxora-account:hover {
+  background: rgba(184, 149, 84, 0.16);
+
+  border-color: #b89554;
+
+  color: #d4af6a;
+
+  transform: translateY(-2px);
+}
+
+.luxora-logout {
+  min-height: 40px;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.luxora-logout:hover {
+  border-color: #b89554;
+
+  background: #b89554;
+
+  color: #11130f;
+}
+
+/* ==========================================================
+   THEME BUTTON
+   ========================================================== */
+
+.luxora-theme-btn {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  line-height: 1;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.luxora-theme-btn:hover {
+  background: rgba(184, 149, 84, 0.18);
+
+  border-color: #b89554;
+
+  color: #d4af6a;
+
+  transform: rotate(15deg);
+}
+
+/* ==========================================================
+   MENU BUTTON
+   ========================================================== */
+
+.luxora-menu-btn {
+  width: 42px;
+  height: 42px;
+
+  display: none;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.luxora-menu-btn span {
+  width: 17px;
+  height: 1px;
+
+  display: block;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    width 0.3s ease;
+}
+
+.luxora-menu-btn:hover {
+  border-color: #b89554;
+}
+
+.luxora-menu-btn.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.luxora-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.luxora-menu-btn.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ==========================================================
+   MOBILE MENU
+   ========================================================== */
+
+.luxora-mobile-menu {
+  display: none;
+
+  width: min(100%, 100%);
+
+  padding: 25px 30px 30px;
+
+  background: rgba(13, 16, 14, 0.97);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.lux-mobile-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.lux-mobile-links a {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.lux-mobile-links a:hover,
+.lux-mobile-links a.active {
+  color: #d4af6a;
+
+  padding-left: 8px;
+}
+
+/* ==========================================================
+   MOBILE AUTH
+   ========================================================== */
+
+.luxora-mobile-auth {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-top: 22px;
+}
+
+.luxora-mobile-login,
+.luxora-mobile-signup,
+.luxora-mobile-account,
+.luxora-mobile-logout {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 16px;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.luxora-mobile-login {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: #ffffff;
+}
+
+.luxora-mobile-signup {
+  background: #b89554;
+
+  border: 1px solid #b89554;
+
+  color: #11130f;
+}
+
+.luxora-mobile-account {
+  border: 1px solid #b89554;
+
+  color: #d4af6a;
+}
+
+.luxora-mobile-logout {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: transparent;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+/* ==========================================================
+   MOBILE MENU OPEN
+   ========================================================== */
+
+.luxora-mobile-menu.open {
+  display: block;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1100px) {
+  .luxora-nav {
+    width: min(100%, calc(100% - 50px));
+
+    min-height: 82px;
+  }
+
+  .luxora-nav-panel {
+    gap: 24px;
+  }
+
+  .lux-nav-links {
+    gap: 19px;
+  }
+
+  .lux-nav-link {
+    font-size: 7px;
+    letter-spacing: 0.13em;
+  }
+
+  .luxora-auth {
+    gap: 5px;
+  }
+
+  .luxora-login,
+  .luxora-signup,
+  .luxora-account,
+  .luxora-logout {
+    padding-inline: 10px;
+
+    font-size: 7px;
+  }
+}
+
+/* ==========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .luxora-nav {
+    width: calc(100% - 40px);
+
+    min-height: 78px;
+  }
+
+  .luxora-nav-panel {
+    gap: 12px;
+  }
+
+  .lux-nav-links {
+    display: none;
+  }
+
+  .luxora-auth {
+    display: none;
+  }
+
+  .luxora-menu-btn {
+    display: flex;
+  }
+
+  .luxora-mobile-menu {
+    padding-inline: 20px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+  .luxora-nav {
+    width: calc(100% - 32px);
+
+    min-height: 74px;
+
+    gap: 10px;
+  }
+
+  .luxora-brand {
+    gap: 8px;
+  }
+
+  .luxora-brand-mark {
+    width: 34px;
+    height: 34px;
+
+    font-size: 22px;
+  }
+
+  .luxora-brand-text strong {
+    font-size: 17px;
+  }
+
+  .luxora-brand-text small {
+    font-size: 5px;
+
+    letter-spacing: 0.19em;
+  }
+
+  .luxora-nav-panel {
+    margin-left: auto;
+  }
+
+  .luxora-theme-btn {
+    width: 35px;
+    height: 35px;
+
+    font-size: 14px;
+  }
+
+  .luxora-menu-btn {
+    width: 39px;
+    height: 39px;
+  }
+
+  .luxora-mobile-menu {
+    padding: 20px 18px 25px;
+  }
+
+  .lux-mobile-links a {
+    min-height: 46px;
+
+    font-size: 8px;
+  }
+
+  .luxora-mobile-auth {
+    display: flex;
+
+    width: 100%;
+  }
+
+  .luxora-mobile-login,
+  .luxora-mobile-signup,
+  .luxora-mobile-account,
+  .luxora-mobile-logout {
+    flex: 1;
+
+    min-height: 40px;
+
+    padding-inline: 10px;
+
+    font-size: 7px;
+  }
+}
+
+/* ==========================================================
+   VERY SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 380px) {
+  .luxora-nav {
+    width: calc(100% - 24px);
+
+    min-height: 70px;
+  }
+
+  .luxora-brand-mark {
+    width: 31px;
+    height: 31px;
+
+    font-size: 20px;
+  }
+
+  .luxora-brand-text strong {
+    font-size: 15px;
+  }
+
+  .luxora-brand-text small {
+    font-size: 4px;
+  }
+
+  .luxora-theme-btn {
+    width: 33px;
+    height: 33px;
+  }
+
+  .luxora-menu-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .luxora-hotel-header,
+  .lux-nav-link,
+  .luxora-login,
+  .luxora-signup,
+  .luxora-account,
+  .luxora-logout,
+  .luxora-theme-btn,
+  .luxora-menu-btn,
+  .luxora-menu-btn span {
+    transition: none;
+  }
+}
