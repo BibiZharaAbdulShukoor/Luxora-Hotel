@@ -20,7 +20,7 @@
     box-shadow 0.35s ease;
 }
 
-.luxora-hotel-header.scrolled {
+.luxora-hotel-header.scrolling {
   background: rgba(13, 16, 14, 0.92);
 
   backdrop-filter: blur(18px);
@@ -106,8 +106,8 @@
 
   font-family: "Inter", Arial, sans-serif;
 
-  font-size: 6px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 600;
 
   letter-spacing: 0.25em;
 }
@@ -148,8 +148,8 @@
 
   font-family: "Inter", Arial, sans-serif;
 
-  font-size: 8px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 
   letter-spacing: 0.17em;
 
@@ -226,8 +226,8 @@
 
   color: rgba(255, 255, 255, 0.82);
 
-  font-size: 8px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 
   letter-spacing: 0.15em;
 
@@ -254,13 +254,14 @@
   padding: 0 17px;
 
   border: 1px solid #b89554;
+  border-radius: 10px;
 
   background: #b89554;
 
   color: #11130f;
 
-  font-size: 8px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 
   letter-spacing: 0.15em;
 
@@ -296,11 +297,11 @@
   padding: 0 14px;
 
   border: 1px solid rgba(255, 255, 255, 0.28);
-
+  border-radius: 10px;
   color: #ffffff;
 
-  font-size: 8px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 
   letter-spacing: 0.13em;
 
@@ -331,13 +332,13 @@
   padding: 0 14px;
 
   border: 1px solid rgba(255, 255, 255, 0.25);
-
+  border-radius: 10px;
   background: transparent;
 
   color: rgba(255, 255, 255, 0.78);
 
-  font-size: 8px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 
   letter-spacing: 0.13em;
 
@@ -420,7 +421,7 @@
   padding: 0;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
-
+  border-radius: 10px;
   background: transparent;
 
   cursor: pointer;
@@ -490,8 +491,8 @@
 
   color: rgba(255, 255, 255, 0.78);
 
-  font-size: 9px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 
   letter-spacing: 0.18em;
 
@@ -535,8 +536,8 @@
 
   padding: 0 16px;
 
-  font-size: 8px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 
   letter-spacing: 0.15em;
 
@@ -545,7 +546,7 @@
 
 .luxora-mobile-login {
   border: 1px solid rgba(255, 255, 255, 0.25);
-
+  border-radius: 10px;
   color: #ffffff;
 }
 
@@ -553,18 +554,19 @@
   background: #b89554;
 
   border: 1px solid #b89554;
-
+  border-radius: 10px;
   color: #11130f;
 }
 
 .luxora-mobile-account {
   border: 1px solid #b89554;
-
+  border-radius: 10px;
   color: #d4af6a;
 }
 
 .luxora-mobile-logout {
   border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
 
   background: transparent;
 

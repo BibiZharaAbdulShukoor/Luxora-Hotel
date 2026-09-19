@@ -1,0 +1,370 @@
+/* ==========================================================
+   LUXORA FOOTER
+   ========================================================== */
+
+.footer {
+  position: relative;
+  background: #0d100e;
+  color: #f5f1e8;
+  padding: 45px 0 18px;
+  overflow: hidden;
+}
+
+/* ==========================================================
+   FOOTER CONTAINER
+   ========================================================== */
+
+.footer .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ==========================================================
+   DECORATIVE GLOW
+   ========================================================== */
+
+.footer::before {
+  content: "";
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -220px;
+  right: -180px;
+
+  background: rgba(194, 157, 85, 0.08);
+  border-radius: 50%;
+
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+/* ==========================================================
+   MAIN
+   ========================================================== */
+
+.footer__main {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+
+  gap: 60px;
+
+  padding-bottom: 30px;
+}
+
+/* ==========================================================
+   BRAND
+   ========================================================== */
+
+.footer__brand {
+  max-width: 360px;
+}
+
+/* ==========================================================
+   LUXORA LOGO
+   ========================================================== */
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 11px;
+
+  text-decoration: none;
+  color: inherit;
+
+  margin-bottom: 20px;
+}
+
+/* L */
+
+.footer__logo-mark {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #b89554;
+  color: #d4af6a;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 25px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+/* LUXORA + HOTEL & RESORT */
+
+.footer__logo-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+/* LUXORA */
+
+.footer__logo-text strong {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+/* HOTEL & RESORT */
+
+.footer__logo-text small {
+  margin-top: 5px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.25em;
+}
+
+/* ==========================================================
+   BRAND DESCRIPTION
+   ========================================================== */
+
+.footer__brand p {
+  max-width: 320px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ==========================================================
+   COLUMNS
+   ========================================================== */
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* COLUMN TITLE */
+
+.footer__column h4 {
+  margin: 0 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  color: #fff;
+}
+
+/* LINKS */
+
+.footer__column a {
+  position: relative;
+
+  margin-bottom: 11px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer__column a:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* TEXT */
+
+.footer__column p {
+  margin: 0 0 18px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ==========================================================
+   LINE ABOVE BOTTOM
+   ========================================================== */
+
+.footer__main::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================
+   BOTTOM
+   ========================================================== */
+
+.footer__bottom {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 15px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 40px 0 18px;
+  }
+
+  .footer .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .footer__main {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px 35px;
+
+    padding-bottom: 30px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+
+    max-width: 500px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 35px 0 18px;
+  }
+
+  .footer .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer__main {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding-bottom: 25px;
+  }
+
+  .footer__brand {
+    grid-column: auto;
+  }
+
+  .footer__column h4 {
+    margin-bottom: 15px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    padding-top: 14px;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 400px) {
+  .footer {
+    padding: 30px 0 15px;
+  }
+
+  .footer .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer__logo-mark {
+    width: 36px;
+    height: 36px;
+
+    font-size: 23px;
+  }
+
+  .footer__logo-text strong {
+    font-size: 18px;
+  }
+
+  .footer__logo-text small {
+    font-size: 9px;
+  }
+
+  .footer__brand p {
+    font-size: 12px;
+  }
+
+  .footer__column a,
+  .footer__column p {
+    font-size: 12px;
+  }
+
+  .footer__bottom {
+    font-size: 10px;
+  }
+}

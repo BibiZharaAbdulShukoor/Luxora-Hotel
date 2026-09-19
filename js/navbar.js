@@ -1,32 +1,31 @@
 /* ==========================================================
-   LUXORA HOTEL
-   SHARED NAVBAR
+   NAVBAR, this script is responsible for loading the navbar HTML, handling the theme toggle, mobile menu toggle, and user authentication state.
    ========================================================== */
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const navbarContainer = document.getElementById("navbar");
+  const navContainer = document.getElementById("navbar");
 
-  if (!navbarContainer) {
-    console.warn("LUXORA: #navbar container was not found.");
+  if (!navContainer) {
+    console.warn("LUXORA: #navbar container is not available.");
     return;
   }
 
   /* ========================================================
-     LOAD NAVBAR HTML
+     LOAD NAVBAR HTML, this part can load the navbar HTML from the components/navbar.html file and insert it into the #navbar container.
      ======================================================== */
 
   try {
-    const response = await fetch("components/navbar.html");
+    const responseMsg = await fetch("components/navbar.html");
 
-    if (!response.ok) {
-      throw new Error(`Navbar could not be loaded: ${response.status}`);
+    if (!responseMsg.ok) {
+      throw new Error(`Navbar loading is failed: ${responseMsg.status}`);
     }
 
-    const navbarHTML = await response.text();
+    const navbarHTML = await responseMsg.text();
 
-    navbarContainer.innerHTML = navbarHTML;
+    navContainer.innerHTML = navbarHTML;
   } catch (error) {
-    console.error("LUXORA Navbar Error:", error);
+    console.error("LUXORA Navbar took Error:", error);
     return;
   }
 
@@ -34,34 +33,34 @@ document.addEventListener("DOMContentLoaded", async () => {
      ELEMENTS
      ======================================================== */
 
-  const header = document.getElementById("luxoraHotel-Header");
+  const navHeader = document.getElementById("luxHotel-Header");
 
-  const themeToggle = document.getElementById("luxoraThemeToggle");
+  const themeTgl = document.getElementById("luxThemeToggle");
 
-  const menuToggle = document.getElementById("luxoraMenuToggle");
+  const menuTgl = document.getElementById("luxMenuToggle");
 
-  const mobileMenu = document.getElementById("luxoraMobileMenu");
+  const mobileNavMenu = document.getElementById("luxMobileMenu");
 
-  const auth = document.getElementById("luxoraAuth");
+  const auth = document.getElementById("luxAuth");
 
-  const mobileAuth = document.getElementById("luxoraMobileAuth");
+  const mobileAuthentication = document.getElementById("luxMobileAuth");
 
-  const login = document.getElementById("luxoraLogin");
+  const login = document.getElementById("luxLogin");
 
-  const signup = document.getElementById("luxoraSignup");
+  const signup = document.getElementById("luxSignup");
 
-  const mobileLogin = document.getElementById("luxoraMobileLogin");
+  const mobileLogin = document.getElementById("luxMobileLogin");
 
-  const mobileSignup = document.getElementById("luxoraMobileSignup");
+  const mobileSignup = document.getElementById("luxMobileSignup");
 
   /* ========================================================
-     AUTH STATE
+     AUTH STATE, this part checks if the user is logged in by checking the localStorage for a specific key. If the user is logged in, it modifies the navbar to show "My Account" and "Logout" options instead of "Login" and "Sign Up".
      ======================================================== */
 
   const isLoggedIn = localStorage.getItem("luxoraLoggedIn") === "true";
 
   /* ========================================================
-     LOGGED-IN USER
+     LOGGED-IN USER, this part handles the display of user-specific options in the navbar when the user is logged in. It removes the login and signup links and adds "My Account" and "Logout" buttons. The logout button clears the localStorage and redirects to the landing page.
      ======================================================== */
 
   if (isLoggedIn) {
@@ -107,7 +106,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     }
 
-    /* MOBILE */
+    /* MOBILE, this part handles the display of mobile-specific options in the navbar when the user is logged in. */
 
     if (mobileLogin) {
       mobileLogin.remove();
@@ -117,28 +116,28 @@ document.addEventListener("DOMContentLoaded", async () => {
       mobileSignup.remove();
     }
 
-    if (mobileAuth) {
-      const mobileAccount = document.createElement("a");
+    if (mobileAuthentication) {
+      const mobile_Account = document.createElement("a");
 
-      mobileAccount.href = "profile.html";
+      mobile_Account.href = "profile.html";
 
-      mobileAccount.className = "luxora-mobile-account";
+      mobile_Account.className = "luxora-mobile-account";
 
-      mobileAccount.textContent = "My Account";
+      mobile_Account.textContent = "My Account";
 
-      mobileAuth.appendChild(mobileAccount);
+      mobileAuthentication.appendChild(mobile_Account);
 
-      const mobileLogout = document.createElement("button");
+      const mobile_Logout = document.createElement("button");
 
-      mobileLogout.type = "button";
+      mobile_Logout.type = "button";
 
-      mobileLogout.className = "luxora-mobile-logout";
+      mobile_Logout.className = "luxora-mobile-logout";
 
-      mobileLogout.textContent = "Logout";
+      mobile_Logout.textContent = "Logout";
 
-      mobileAuth.appendChild(mobileLogout);
+      mobileAuthentication.appendChild(mobile_Logout);
 
-      mobileLogout.addEventListener("click", () => {
+      mobile_Logout.addEventListener("click", () => {
         localStorage.removeItem("luxoraLoggedIn");
 
         localStorage.removeItem("luxoraCurrentUser");
@@ -151,13 +150,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   /* ========================================================
-     ACTIVE PAGE
+     ACTIVE PAGE, this part highlights the current page in the navbar by adding an "active" class to the corresponding link based on the current URL path.
      ======================================================== */
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
   document
-    .querySelectorAll(".lux-nav-link[data-page], .lux-mobile-linksa[data-page]")
+    .querySelectorAll(".lux-nav-link[data-page], .lux-mobile-links[data-page]")
     .forEach((link) => {
       const page = link.getAttribute("data-page");
 
@@ -167,99 +166,88 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   /* ========================================================
-     SCROLL NAVBAR
+     SCROLL NAVBAR, this part adds a "scrolling" class to the navbar when the user scrolls down the page, which can be used to change the navbar's appearance (e.g., background color, shadow) when scrolling.
      ======================================================== */
 
-  const updateHeader = () => {
-    if (!header) {
+  const updateNavHeader = () => {
+    if (!navHeader) {
       return;
     }
 
-    if (window.scrollY > 30) {
-      header.classList.add("scrolled");
+    if (window.scrollY > 50) {
+      navHeader.classList.add("scrolling");
     } else {
-      header.classList.remove("scrolled");
+      navHeader.classList.remove("scrolling");
     }
   };
 
-  updateHeader();
+  updateNavHeader();
 
-  window.addEventListener("scroll", updateHeader, { passive: true });
+  window.addEventListener("scroll", updateNavHeader, { passive: true });
 
   /* ========================================================
-     MOBILE MENU
+     MOBILE MENU, this part handles the display and functionality of the mobile navigation menu.
      ======================================================== */
 
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("open");
+  if (menuTgl && mobileNavMenu) {
+    menuTgl.addEventListener("click", () => {
+      const isOpen = mobileNavMenu.classList.toggle("open");
 
-      menuToggle.classList.toggle("open", isOpen);
+      menuTgl.classList.toggle("open", isOpen);
 
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuTgl.setAttribute("aria-expanded", String(isOpen));
 
-      menuToggle.setAttribute(
+      menuTgl.setAttribute(
         "aria-label",
         isOpen ? "Close navigation menu" : "Open navigation menu",
       );
     });
 
-    mobileMenu.querySelectorAll("a").forEach((link) => {
+    mobileNavMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
+        mobileNavMenu.classList.remove("open");
 
-        menuToggle.classList.remove("open");
+        menuTgl.classList.remove("open");
 
-        menuToggle.setAttribute("aria-expanded", "false");
+        menuTgl.setAttribute("aria-expanded", "false");
       });
     });
   }
 
   /* ========================================================
-     THEME
+     THEME, this part manages the theme selection and application for the navbar.
      ======================================================== */
 
-  const savedTheme = localStorage.getItem("luxora-theme");
-
-  const applyTheme = (theme) => {
+  const saveTheme = localStorage.getItem("luxora-theme");
+  const performTheme = (theme) => {
     document.body.classList.toggle("dark", theme === "dark");
-
     document.body.classList.toggle("dark-theme", theme === "dark");
-
     document.body.setAttribute("data-theme", theme);
-
-    if (themeToggle) {
-      themeToggle.textContent = theme === "dark" ? "☀" : "☾";
+    if (themeTgl) {
+      themeTgl.textContent = theme === "dark" ? "☀" : "☾";
     }
   };
-
-  const initialTheme = savedTheme === "dark" ? "dark" : "light";
-
-  applyTheme(initialTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
+  const primaryTheme = saveTheme === "dark" ? "dark" : "light";
+  performTheme(primaryTheme);
+  if (themeTgl) {
+    themeTgl.addEventListener("click", () => {
       const isDark = document.body.classList.contains("dark");
-
       const newTheme = isDark ? "light" : "dark";
-
       localStorage.setItem("luxora-theme", newTheme);
-
-      applyTheme(newTheme);
+      performTheme(newTheme);
     });
   }
-
   /* ========================================================
      CLOSE MENU WHEN RESIZING TO DESKTOP
      ======================================================== */
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900 && mobileMenu && menuToggle) {
-      mobileMenu.classList.remove("open");
+    if (window.innerWidth > 920 && mobileNavMenu && menuTgl) {
+      mobileNavMenu.classList.remove("open");
 
-      menuToggle.classList.remove("open");
+      menuTgl.classList.remove("open");
 
-      menuToggle.setAttribute("aria-expanded", "false");
+      menuTgl.setAttribute("aria-expanded", "false");
     }
   });
 });

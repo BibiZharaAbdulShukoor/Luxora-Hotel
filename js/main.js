@@ -1,6 +1,5 @@
 /* ==========================================================
    LUXORA HOTEL — FINAL HOME PAGE
-   Vanilla JavaScript
    ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================
-     SMOOTH ANCHOR NAVIGATION
+     SMOOTH ANCHOR NAVIGATION, this part can handle the smooth scrolling to anchor links when clicked.
   ========================================================== */
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       */
 
       const myHeader =
-        document.getElementById("luxoraHotel-Header") ||
+        document.getElementById("luxHotel-Header") ||
         document.querySelector(".luxora-hotel-header");
 
       const offset = myHeader?.offsetHeight || 0;
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================
-     ACTIVE NAVIGATION
+     ACTIVE NAVIGATION, this part can handle the active state of the navbar links based on the current page and scroll position.
   ========================================================== */
 
   const sections = [...document.querySelectorAll("main section[id]")];
@@ -83,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const myHeader =
-      document.getElementById("luxoraHotel-Header") ||
+      document.getElementById("luxHotel-Header") ||
       document.querySelector(".luxora-hotel-header");
 
     const markerOne = window.scrollY + (myHeader?.offsetHeight || 80) + 100;
@@ -111,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================
-     BOOKING DATES
+     BOOKING DATES, this part can handle the check-in and check-out dates, guests selection, and review availability button.
   ========================================================== */
 
   const checkIn = document.getElementById("checkIn");
@@ -400,7 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================
-     KEYBOARD
+     KEYBOARD, this part can handle the keyboard events for the gallery lightbox.
   ========================================================== */
 
   document.addEventListener("keydown", (event) => {
@@ -433,56 +432,56 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================
-     CUSTOM CURSOR
+     CUSTOM CURSOR, this part can show the custom cursor when the user moves the mouse on the page.
   ========================================================== */
 
-  const cursor = document.getElementById("cursor");
+  const cursorView = document.getElementById("cursor");
 
-  if (cursor && window.matchMedia("(pointer: fine)").matches) {
-    cursor.style.opacity = "1";
+  if (cursorView && window.matchMedia("(pointer: fine)").matches) {
+    cursorView.style.opacity = "1";
 
     window.addEventListener("mousemove", (event) => {
-      cursor.style.left = `${event.clientX}px`;
+      cursorView.style.left = `${event.clientX}px`;
 
-      cursor.style.top = `${event.clientY}px`;
+      cursorView.style.top = `${event.clientY}px`;
     });
 
     document.querySelectorAll("a, button").forEach((element) => {
       element.addEventListener("mouseenter", () => {
-        cursor.style.width = "22px";
+        cursorView.style.width = "20px";
 
-        cursor.style.height = "22px";
+        cursorView.style.height = "20px";
       });
 
       element.addEventListener("mouseleave", () => {
-        cursor.style.width = "9px";
+        cursorView.style.width = "10px";
 
-        cursor.style.height = "9px";
+        cursorView.style.height = "10px";
       });
     });
   }
 
   /* ==========================================================
-     TOAST
+     TOAST, this part can show the toast message when the user clicks the review availability button without selecting the check-in and check-out dates.
   ========================================================== */
 
   let toastTimer;
 
   function showToast(message) {
-    const toast = document.getElementById("toast");
+    const toastMsg = document.getElementById("toast");
 
-    if (!toast) {
+    if (!toastMsg) {
       return;
     }
 
     clearTimeout(toastTimer);
 
-    toast.textContent = message;
+    toastMsg.textContent = message;
 
-    toast.classList.add("show");
+    toastMsg.classList.add("show");
 
     toastTimer = setTimeout(() => {
-      toast.classList.remove("show");
-    }, 3500);
+      toastMsg.classList.remove("show");
+    }, 4000);
   }
 });
