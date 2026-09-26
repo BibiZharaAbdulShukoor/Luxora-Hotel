@@ -1,13 +1,21 @@
 /* ==========================================================
    LUXORA FOOTER
+   Light Mode / Dark Mode / Responsive
    ========================================================== */
 
 .footer {
   position: relative;
-  background: #0d100e;
-  color: #f5f1e8;
+
+  background: #f5f2eb;
+  color: #17130d;
+
   padding: 45px 0 18px;
+
   overflow: hidden;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
 }
 
 /* ==========================================================
@@ -17,7 +25,9 @@
 .footer .container {
   width: 100%;
   max-width: 1200px;
+
   margin: 0 auto;
+
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -28,6 +38,7 @@
 
 .footer::before {
   content: "";
+
   position: absolute;
 
   width: 420px;
@@ -37,9 +48,11 @@
   right: -180px;
 
   background: rgba(194, 157, 85, 0.08);
+
   border-radius: 50%;
 
   filter: blur(20px);
+
   pointer-events: none;
 }
 
@@ -52,6 +65,7 @@
   z-index: 1;
 
   display: grid;
+
   grid-template-columns: 2fr 1fr 1fr 1fr;
 
   gap: 60px;
@@ -78,12 +92,15 @@
   gap: 11px;
 
   text-decoration: none;
+
   color: inherit;
 
   margin-bottom: 20px;
 }
 
-/* L */
+/* ==========================================================
+   LOGO MARK
+   ========================================================== */
 
 .footer__logo-mark {
   width: 39px;
@@ -93,16 +110,20 @@
   place-items: center;
 
   border: 1px solid #b89554;
-  color: #d4af6a;
+
+  color: #b89554;
 
   font-family: "Cormorant Garamond", Georgia, serif;
+
   font-size: 25px;
   font-weight: 600;
 
   line-height: 1;
 }
 
-/* LUXORA + HOTEL & RESORT */
+/* ==========================================================
+   LOGO TEXT
+   ========================================================== */
 
 .footer__logo-text {
   display: flex;
@@ -111,7 +132,9 @@
   line-height: 1;
 }
 
-/* LUXORA */
+/* ==========================================================
+   LUXORA
+   ========================================================== */
 
 .footer__logo-text strong {
   font-family: "Cormorant Garamond", Georgia, serif;
@@ -120,14 +143,18 @@
   font-weight: 600;
 
   letter-spacing: 0.13em;
+
+  color: #17130d;
 }
 
-/* HOTEL & RESORT */
+/* ==========================================================
+   HOTEL & RESORT
+   ========================================================== */
 
 .footer__logo-text small {
   margin-top: 5px;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(23, 19, 13, 0.55);
 
   font-family: "Inter", Arial, sans-serif;
 
@@ -146,11 +173,12 @@
 
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(23, 19, 13, 0.58);
 
   font-family: "Inter", sans-serif;
 
   font-size: 13px;
+
   line-height: 1.8;
 }
 
@@ -160,11 +188,15 @@
 
 .footer__column {
   display: flex;
+
   flex-direction: column;
+
   align-items: flex-start;
 }
 
-/* COLUMN TITLE */
+/* ==========================================================
+   COLUMN TITLE
+   ========================================================== */
 
 .footer__column h4 {
   margin: 0 0 20px;
@@ -174,17 +206,19 @@
   font-size: 20px;
   font-weight: 500;
 
-  color: #fff;
+  color: #17130d;
 }
 
-/* LINKS */
+/* ==========================================================
+   LINKS
+   ========================================================== */
 
 .footer__column a {
   position: relative;
 
   margin-bottom: 11px;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(23, 19, 13, 0.58);
 
   font-family: "Inter", sans-serif;
 
@@ -198,20 +232,24 @@
 }
 
 .footer__column a:hover {
-  color: #fff;
+  color: #b89554;
+
   transform: translateX(5px);
 }
 
-/* TEXT */
+/* ==========================================================
+   TEXT
+   ========================================================== */
 
 .footer__column p {
   margin: 0 0 18px;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(23, 19, 13, 0.58);
 
   font-family: "Inter", sans-serif;
 
   font-size: 13px;
+
   line-height: 1.8;
 }
 
@@ -230,7 +268,7 @@
 
   height: 1px;
 
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(23, 19, 13, 0.12);
 }
 
 /* ==========================================================
@@ -239,21 +277,98 @@
 
 .footer__bottom {
   position: relative;
+
   z-index: 1;
 
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   padding-top: 15px;
 
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(23, 19, 13, 0.4);
 
   font-family: "Inter", sans-serif;
 
   font-size: 11px;
+
   letter-spacing: 0.5px;
+}
+
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+body.dark .footer {
+  background: #0d100e;
+
+  color: #f5f1e8;
+}
+
+/* ==========================================================
+   DARK MODE — LOGO
+   ========================================================== */
+
+body.dark .footer__logo-text strong {
+  color: #ffffff;
+}
+
+body.dark .footer__logo-text small {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==========================================================
+   DARK MODE — BRAND DESCRIPTION
+   ========================================================== */
+
+body.dark .footer__brand p {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==========================================================
+   DARK MODE — COLUMN TITLE
+   ========================================================== */
+
+body.dark .footer__column h4 {
+  color: #ffffff;
+}
+
+/* ==========================================================
+   DARK MODE — LINKS
+   ========================================================== */
+
+body.dark .footer__column a {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.dark .footer__column a:hover {
+  color: #d4af6a;
+}
+
+/* ==========================================================
+   DARK MODE — TEXT
+   ========================================================== */
+
+body.dark .footer__column p {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==========================================================
+   DARK MODE — LINE
+   ========================================================== */
+
+body.dark .footer__main::after {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================
+   DARK MODE — BOTTOM
+   ========================================================== */
+
+body.dark .footer__bottom {
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* ==========================================================

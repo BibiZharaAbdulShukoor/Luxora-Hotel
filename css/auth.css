@@ -1,0 +1,844 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f4f1ea;
+  color: #171613;
+  transition: 0.4s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 48% 52%;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.auth-image {
+  position: relative;
+
+  min-height: 100vh;
+
+  background: url("../images/landing-page-photo/photo-1542314831-068cd1dbfeeb.avif")
+    center / cover;
+
+  color: white;
+}
+
+.signup-image {
+  background-image: url("../images/landing-page-photo/photo-1601918774946-25832a4be0d6.avif");
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.75), transparent 60%);
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+/* Logo on the image */
+
+.auth-image > .luxora-brand {
+  position: absolute;
+
+  top: 35px;
+  left: 55px;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  color: #f4f1ea;
+
+  text-decoration: none;
+}
+
+/* Logo mark */
+
+.luxora-brand-mark {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid #b89554;
+
+  color: #b89554;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+/* Logo text */
+
+.luxora-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+/* LUXORA */
+
+.luxora-brand-text strong {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+
+  color: #f4f1ea;
+}
+
+/* HOTEL & RESIDENCES */
+
+.luxora-brand-text small {
+  margin-top: 5px;
+
+  color: rgba(244, 241, 234, 0.65);
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.25em;
+}
+
+/* ==========================================================
+   MOBILE LOGO
+========================================================== */
+
+.auth-top .luxora-brand {
+  display: none;
+}
+/* =========================
+   image
+========================= */
+
+.image-content {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 55px;
+  right: 55px;
+  bottom: 70px;
+}
+
+.image-content p {
+  font-size: 14px;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 25px;
+}
+
+.image-content h1 {
+  width: 700px;
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 6vw, 90px);
+
+  line-height: 0.86;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 25px;
+}
+
+.image-content h1 em {
+  font-weight: 400;
+  color: #b89554;
+}
+
+.image-content span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+
+  color: #ddd;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.auth-panel {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 50px;
+}
+
+.auth-top {
+  position: absolute;
+
+  top: 30px;
+  right: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.theme-btn {
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 22px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.auth-box {
+  width: 100%;
+
+  max-width: 470px;
+}
+
+.eyebrow {
+  color: #b89554;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 22px;
+}
+
+.auth-box h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 65px;
+
+  line-height: 0.88;
+
+  font-weight: 600;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 22px;
+}
+
+.auth-box h2 em {
+  font-weight: 600;
+  color: #b89554;
+}
+
+.auth-description {
+  color: #77736a;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  max-width: 4100px;
+
+  margin-bottom: 35px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+
+  font-size: 11px;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 9px;
+}
+
+.input-group input {
+  width: 100%;
+
+  height: 51px;
+
+  padding: 0 15px;
+
+  border: 1px solid #b89554;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #b89554;
+
+  box-shadow: 0 0 0 3px rgba(169, 139, 87, 0.08);
+}
+
+.input-group input::placeholder {
+  color: #aaa59b;
+}
+
+.label-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.label-row a {
+  font-size: 11px;
+
+  color: #b89554;
+
+  border-bottom: 1px solid #967847;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 65px;
+}
+
+.show-password {
+  position: absolute;
+
+  top: 50%;
+  right: 14px;
+
+  transform: translateY(-50%);
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  color: #b89554;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+}
+
+/* =========================
+   REMEMBER
+========================= */
+
+.remember,
+.terms {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  font-size: 12px;
+
+  color: #b89554;
+
+  margin: 8px 0 24px;
+
+  cursor: pointer;
+}
+
+.remember input,
+.terms input {
+  accent-color: #a78a57;
+
+  margin-top: 1px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.auth-btn {
+  width: 100%;
+
+  height: 55px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #b89554;
+
+  color: black;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #b8975e;
+
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.auth-btn span {
+  font-size: 18px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin: 28px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+
+  height: 1px;
+
+  background: #ddd8ce;
+
+  flex: 1;
+}
+
+.divider span {
+  font-size: 10px;
+
+  color: #99948b;
+
+  letter-spacing: 2px;
+}
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch-auth {
+  text-align: center;
+
+  color: #77736a;
+
+  font-size: 13px;
+}
+.switch-auth :hover {
+  color: #77736a;
+  border-bottom: 1px solid #77736a;
+}
+
+.switch-auth a {
+  color: #b89554;
+
+  margin-left: 4px;
+
+  border-bottom: 1px solid #b89554;
+}
+
+.back-home {
+  display: block;
+
+  text-align: center;
+
+  margin-top: 25px;
+
+  font-size: 10px;
+
+  letter-spacing: 1.2px;
+
+  color: #77736a;
+
+  text-transform: uppercase;
+}
+
+/* =========================
+   SIGNUP
+========================= */
+
+.signup-box h2 {
+  font-size: 59px;
+}
+
+.two-inputs {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+}
+
+/* =========================
+   PASSWORD STRENGTH
+========================= */
+
+.password-strength {
+  margin-top: -8px;
+
+  margin-bottom: 18px;
+}
+
+.strength-bars {
+  display: flex;
+
+  gap: 4px;
+
+  margin-bottom: 5px;
+}
+
+.strength-bars span {
+  height: 3px;
+
+  flex: 1;
+
+  background: #ddd8ce;
+
+  transition: 0.3s;
+}
+
+.password-strength small {
+  color: #99948b;
+
+  font-size: 10px;
+}
+
+/* =========================
+   TERMS
+========================= */
+
+.terms {
+  line-height: 1.6;
+
+  margin-top: 5px;
+}
+
+.terms a {
+  color: #967847;
+
+  border-bottom: 1px solid #967847;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  padding: 15px 20px;
+
+  background: #967847;
+  border-radius: 10px;
+
+  color: white;
+
+  font-size: 11px;
+
+  z-index: 5000;
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  transition: 0.3s;
+}
+
+.toast.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+  background: #11110f;
+
+  color: #f4f1ea;
+}
+
+body.dark .auth-description,
+body.dark .remember,
+body.dark .terms,
+body.dark .switch-auth {
+  color: #aaa59a;
+}
+
+body.dark .input-group input {
+  border-color: #3b3934;
+}
+
+body.dark .input-group input:focus {
+  border-color: #b79a64;
+}
+
+body.dark .divider::before,
+body.dark .divider::after {
+  background: #37352f;
+}
+
+body.dark .auth-btn {
+  background: #b89554;
+
+  color: #fff;
+}
+
+body.dark .auth-btn:hover {
+  background: #c5a469;
+}
+
+body.dark .strength-bars span {
+  background: #3b3934;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 900px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-image {
+    display: none;
+  }
+
+  .auth-panel {
+    min-height: 100vh;
+
+    padding: 90px 35px 40px;
+  }
+
+  .mobile-brand {
+    display: block;
+  }
+
+  .auth-top {
+    left: 35px;
+    right: 35px;
+
+    justify-content: space-between;
+  }
+
+  /* Show the second logo on mobile */
+
+  .auth-top .luxora-brand {
+    position: static;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #17130d;
+  }
+
+  .auth-top .luxora-brand-text strong {
+    color: #17130d;
+  }
+
+  .auth-top .luxora-brand-text small {
+    color: rgba(23, 19, 13, 0.55);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .auth-panel {
+    padding: 85px 22px 35px;
+  }
+
+  .auth-top {
+    left: 22px;
+    right: 22px;
+  }
+
+  .auth-box h2,
+  .signup-box h2 {
+    font-size: 52px;
+  }
+
+  .two-inputs {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .auth-description {
+    font-size: 11px;
+  }
+}
+/* ==========================================================
+   DARK MODE — HEADER & THEME BUTTON
+========================================================== */
+
+/* Theme button in light mode */
+
+.theme-btn {
+  width: 38px;
+  height: 38px;
+  color: #171613;
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.theme-btn:hover {
+  color: #b89554;
+  border-color: #b89554;
+  transform: rotate(15deg);
+}
+
+/* Theme button in dark mode */
+
+body.dark .theme-btn {
+  color: #b89554;
+  border-color: #b89554;
+}
+
+body.dark .theme-btn:hover {
+  color: #d2b477;
+  border-color: #b89554;
+  transform: rotate(15deg);
+}
+
+body.dark .auth-box h2 em {
+  color: #b89554;
+}
+
+/* ==========================================================
+   DARK MODE — MOBILE HEADER / LOGO
+========================================================== */
+
+body.dark .auth-top .luxora-brand {
+  color: #b89554;
+}
+
+body.dark .auth-top .luxora-brand-mark {
+  border-color: #b89554;
+  color: #b89554;
+}
+
+body.dark .auth-top .luxora-brand-text strong {
+  color: #fff;
+}
+
+body.dark .auth-top .luxora-brand-text small {
+  color: #fff;
+}
+
+/* ==========================================================
+   DARK MODE — IMAGE LOGO
+========================================================== */
+
+body.dark .auth-image > .luxora-brand {
+  color: #b89554;
+}
+
+body.dark .auth-image > .luxora-brand-mark {
+  border-color: #b89554;
+  color: #b89554;
+}
+
+body.dark .auth-image > .luxora-brand-text strong {
+  color: #b89554;
+}
+
+body.dark .auth-image > .luxora-brand-text small {
+  color: #b89554;
+}

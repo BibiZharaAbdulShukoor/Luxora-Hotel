@@ -17,7 +17,7 @@
 
   --line: rgba(23, 24, 23, 0.14);
 
-  --gold: #b89554;
+  --gold: #c5a469;
   --gold-bright: #d4af6a;
 
   --dark: #0d100e;
@@ -190,6 +190,7 @@ em {
 
 .btn--gold:hover {
   background: var(--gold-bright);
+  color: #fff;
 }
 
 .btn--outline {
@@ -214,18 +215,15 @@ em {
 .loader {
   position: fixed;
   inset: 0;
-
   z-index: 9999;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
-
   gap: 13px;
 
-  background: var(--dark);
+  background: #f5f2eb;
   color: var(--gold);
 
   transition:
@@ -240,8 +238,8 @@ em {
 }
 
 .loader__logo {
-  width: 62px;
-  height: 62px;
+  width: 82px;
+  height: 82px;
 
   display: grid;
   place-items: center;
@@ -254,51 +252,25 @@ em {
 }
 
 .loader > span {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.3em;
 }
 
-@keyframes loaderPulse {
-  0%,
-  100% {
-    transform: scale(0.92);
-    opacity: 0.55;
-  }
-
-  50% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 /* ==========================================================
-   CUSTOM CURSOR
+   DARK MODE LOADER
    ========================================================== */
 
-.cursor {
-  position: fixed;
+body.dark .loader {
+  background: #0d100e;
+  color: #d4af6a;
+}
 
-  z-index: 8000;
+body.dark .loader__logo {
+  border-color: #d4af6a;
+}
 
-  width: 9px;
-  height: 9px;
-
-  border-radius: 50%;
-
-  background: var(--gold);
-
-  pointer-events: none;
-
-  transform: translate(-50%, -50%);
-
-  mix-blend-mode: difference;
-
-  opacity: 0;
-
-  transition:
-    width 0.25s ease,
-    height 0.25s ease,
-    opacity 0.25s ease;
+body.dark .loader > span {
+  color: #d4af6a;
 }
 
 /* ==========================================================
@@ -980,55 +952,63 @@ em {
 
 /* ==========================================================
    EXPERIENCE
+   Light Mode / Dark Mode
    ========================================================== */
 
 .experience {
   display: grid;
-
   grid-template-columns:
     1fr
     1fr;
 
   min-height: 770px;
 
-  background: var(--dark);
+  background: var(--surface-alt);
+  color: var(--text);
 
-  color: #fff;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
 }
 
 .experience__image {
   position: relative;
-
   min-height: 770px;
 }
 
 .experience__image img {
   height: 100%;
-
   object-fit: cover;
 }
 
 .experience__image-label {
   position: absolute;
-
   left: 35px;
   bottom: 32px;
 
   color: rgba(255, 255, 255, 0.6);
 
   font-size: 7px;
-
   letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
 .experience__content {
   align-self: center;
 
   padding: 90px clamp(45px, 8vw, 125px);
+
+  background: var(--surface-alt);
+
+  transition: background 0.35s ease;
 }
 
 .experience__content h2 {
   margin-top: 17px;
+
+  color: var(--text);
+
+  transition: color 0.35s ease;
 }
 
 .experience__lead {
@@ -1036,15 +1016,16 @@ em {
 
   margin: 28px 0 43px;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
 
   font-size: 13px;
-
   line-height: 1.95;
+
+  transition: color 0.35s ease;
 }
 
 .experience__list {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid var(--line);
 }
 
 .experience__list a {
@@ -1059,31 +1040,122 @@ em {
 
   padding: 20px 0;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid var(--line);
+
+  color: var(--text);
 
   transition:
     color 0.3s ease,
-    padding 0.3s ease;
+    padding 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .experience__list a:hover {
   padding-left: 9px;
-
-  color: var(--gold-bright);
+  color: var(--gold);
 }
 
 .experience__list span {
   color: var(--gold);
-
   font-size: 8px;
 }
 
 .experience__list strong {
+  color: inherit;
   font: 500 23px var(--serif);
 }
 
 .experience__list b {
+  color: inherit;
   font-weight: 400;
+}
+
+/* ==========================================================
+   EXPERIENCE — DARK MODE
+   ========================================================== */
+
+body.dark .experience {
+  background: #0d100e;
+  color: #f5f1e8;
+}
+
+body.dark .experience__content {
+  background: #0d100e;
+}
+
+body.dark .experience__content h2 {
+  color: #ffffff;
+}
+
+body.dark .experience__lead {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark .experience__list {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark .experience__list a {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+body.dark .experience__list a:hover {
+  color: #d4af6a;
+}
+
+body.dark .experience__list span {
+  color: #d4af6a;
+}
+
+/* ==========================================================
+   EXPERIENCE — TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .experience {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .experience__image {
+    min-height: 550px;
+  }
+
+  .experience__content {
+    padding: 80px 8%;
+  }
+}
+
+/* ==========================================================
+   EXPERIENCE — MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+  .experience__image {
+    min-height: 400px;
+  }
+
+  .experience__content {
+    padding: 70px 25px;
+  }
+
+  .experience__lead {
+    font-size: 13px;
+  }
+
+  .experience__list a {
+    grid-template-columns:
+      35px
+      1fr
+      18px;
+
+    padding: 18px 0;
+  }
+
+  .experience__list strong {
+    font-size: 21px;
+  }
 }
 
 /* ==========================================================
@@ -1695,18 +1767,6 @@ em {
 
   .hero__rating > span:last-child {
     font-size: 5px;
-  }
-}
-
-/* ==========================================================
-   CUSTOM CURSOR — DESKTOP ONLY
-   ========================================================== */
-
-@media (pointer: fine) {
-  body,
-  a,
-  button {
-    cursor: none;
   }
 }
 

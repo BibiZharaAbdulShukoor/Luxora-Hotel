@@ -57,13 +57,13 @@ document.addEventListener("DOMContentLoaded", async () => {
      AUTH STATE, this part checks if the user is logged in by checking the localStorage for a specific key. If the user is logged in, it modifies the navbar to show "My Account" and "Logout" options instead of "Login" and "Sign Up".
      ======================================================== */
 
-  const isLoggedIn = localStorage.getItem("luxoraLoggedIn") === "true";
+  const isGuestLoggedIn = localStorage.getItem("guestLoggedIn") === "true";
 
   /* ========================================================
      LOGGED-IN USER, this part handles the display of user-specific options in the navbar when the user is logged in. It removes the login and signup links and adds "My Account" and "Logout" buttons. The logout button clears the localStorage and redirects to the landing page.
      ======================================================== */
 
-  if (isLoggedIn) {
+  if (isGuestLoggedIn) {
     /* DESKTOP */
 
     if (login) {
@@ -96,11 +96,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       auth.appendChild(logout);
 
       logout.addEventListener("click", () => {
-        localStorage.removeItem("luxoraLoggedIn");
+        localStorage.removeItem("guestLoggedIn");
 
         localStorage.removeItem("luxoraCurrentUser");
 
-        localStorage.removeItem("luxoraRedirectAfterLogin");
+        localStorage.removeItem("guestRedirectAfterLogin");
 
         window.location.replace("landing.html");
       });
@@ -138,11 +138,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       mobileAuthentication.appendChild(mobile_Logout);
 
       mobile_Logout.addEventListener("click", () => {
-        localStorage.removeItem("luxoraLoggedIn");
+        localStorage.removeItem("guestLoggedIn");
 
         localStorage.removeItem("luxoraCurrentUser");
 
-        localStorage.removeItem("luxoraRedirectAfterLogin");
+        localStorage.removeItem("guestRedirectAfterLogin");
 
         window.location.replace("landing.html");
       });

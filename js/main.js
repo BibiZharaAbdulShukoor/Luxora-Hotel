@@ -432,36 +432,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ==========================================================
-     CUSTOM CURSOR, this part can show the custom cursor when the user moves the mouse on the page.
-  ========================================================== */
-
-  const cursorView = document.getElementById("cursor");
-
-  if (cursorView && window.matchMedia("(pointer: fine)").matches) {
-    cursorView.style.opacity = "1";
-
-    window.addEventListener("mousemove", (event) => {
-      cursorView.style.left = `${event.clientX}px`;
-
-      cursorView.style.top = `${event.clientY}px`;
-    });
-
-    document.querySelectorAll("a, button").forEach((element) => {
-      element.addEventListener("mouseenter", () => {
-        cursorView.style.width = "20px";
-
-        cursorView.style.height = "20px";
-      });
-
-      element.addEventListener("mouseleave", () => {
-        cursorView.style.width = "10px";
-
-        cursorView.style.height = "10px";
-      });
-    });
-  }
-
-  /* ==========================================================
      TOAST, this part can show the toast message when the user clicks the review availability button without selecting the check-in and check-out dates.
   ========================================================== */
 

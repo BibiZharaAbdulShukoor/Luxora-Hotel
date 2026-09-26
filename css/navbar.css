@@ -1,6 +1,10 @@
 /* ==========================================================
    LUXORA — SHARED NAVBAR
-   Responsive / Dark Mode / Mobile Menu
+   Responsive / Light Mode / Dark Mode / Mobile Menu
+   ========================================================== */
+
+/* ==========================================================
+   HEADER
    ========================================================== */
 
 .luxora-hotel-header {
@@ -10,23 +14,28 @@
   width: 100%;
   z-index: 5000;
 
-  color: #ffffff;
+  color: #17130d;
 
   background: transparent;
 
   transition:
     background 0.35s ease,
     backdrop-filter 0.35s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease,
+    color 0.35s ease;
 }
 
+/* ==========================================================
+   HEADER WHEN SCROLLING — LIGHT MODE
+   ========================================================== */
+
 .luxora-hotel-header.scrolling {
-  background: rgba(13, 16, 14, 0.92);
+  background: rgba(245, 242, 235, 0.94);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 30px rgba(60, 45, 25, 0.12);
 }
 
 /* ==========================================================
@@ -59,7 +68,7 @@
 
   gap: 11px;
 
-  color: #ffffff;
+  color: #17130d;
 
   text-decoration: none;
 }
@@ -73,7 +82,7 @@
 
   border: 1px solid #b89554;
 
-  color: #d4af6a;
+  color: #b89554;
 
   font-family: "Cormorant Garamond", Georgia, serif;
 
@@ -97,12 +106,14 @@
   font-weight: 600;
 
   letter-spacing: 0.13em;
+
+  color: #17130d;
 }
 
 .luxora-brand-text small {
   margin-top: 5px;
 
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(23, 19, 13, 0.55);
 
   font-family: "Inter", Arial, sans-serif;
 
@@ -144,12 +155,12 @@
 
   min-height: 40px;
 
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(23, 19, 13, 0.72);
 
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: 0.17em;
 
@@ -173,13 +184,13 @@
   width: 0;
   height: 1px;
 
-  background: #d4af6a;
+  background: #c5a469;
 
   transition: width 0.3s ease;
 }
 
 .lux-nav-link:hover {
-  color: #ffffff;
+  color: #17130d;
 }
 
 .lux-nav-link:hover::after,
@@ -188,7 +199,7 @@
 }
 
 .lux-nav-link.active {
-  color: #ffffff;
+  color: #17130d;
 }
 
 /* ==========================================================
@@ -215,6 +226,10 @@
   gap: 10px;
 }
 
+/* ==========================================================
+   LOGIN
+   ========================================================== */
+
 .luxora-login {
   min-height: 40px;
 
@@ -224,11 +239,11 @@
 
   padding: 0 14px;
 
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(23, 19, 13, 0.82);
 
   font-size: 14px;
-  font-weight: 600;
-
+  font-weight: 700;
+  font-family: "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0.15em;
 
   text-transform: uppercase;
@@ -241,8 +256,12 @@
 }
 
 .luxora-login:hover {
-  color: #d4af6a;
+  color: #c5a469;
 }
+
+/* ==========================================================
+   SIGN UP
+   ========================================================== */
 
 .luxora-signup {
   min-height: 40px;
@@ -253,16 +272,16 @@
 
   padding: 0 17px;
 
-  border: 1px solid #b89554;
+  border: 1px solid #c5a469;
   border-radius: 10px;
 
-  background: #b89554;
+  background: #c5a469;
 
   color: #11130f;
 
   font-size: 14px;
-  font-weight: 600;
-
+  font-weight: 700;
+  font-family: "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0.15em;
 
   text-transform: uppercase;
@@ -277,8 +296,9 @@
 }
 
 .luxora-signup:hover {
-  background: #d4af6a;
+  background: #c5a469;
   border-color: #d4af6a;
+  color: white;
 
   transform: translateY(-2px);
 }
@@ -296,13 +316,14 @@
 
   padding: 0 14px;
 
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(23, 19, 13, 0.28);
   border-radius: 10px;
-  color: #ffffff;
+
+  color: #17130d;
 
   font-size: 14px;
-  font-weight: 600;
-
+  font-weight: 700;
+  font-family: "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0.13em;
 
   text-transform: uppercase;
@@ -321,25 +342,30 @@
 
   border-color: #b89554;
 
-  color: #d4af6a;
+  color: #b89554;
 
   transform: translateY(-2px);
 }
+
+/* ==========================================================
+   LOGOUT
+   ========================================================== */
 
 .luxora-logout {
   min-height: 40px;
 
   padding: 0 14px;
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(23, 19, 13, 0.25);
   border-radius: 10px;
+
   background: transparent;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(23, 19, 13, 0.78);
 
   font-size: 14px;
-  font-weight: 600;
-
+  font-weight: 700;
+  font-family: "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0.13em;
 
   text-transform: uppercase;
@@ -355,9 +381,9 @@
 .luxora-logout:hover {
   border-color: #b89554;
 
-  background: #b89554;
+  background: #c5a469;
 
-  color: #11130f;
+  color: #fff;
 }
 
 /* ==========================================================
@@ -373,31 +399,27 @@
 
   padding: 0;
 
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(23, 19, 13, 0.28);
 
   border-radius: 50%;
 
   background: transparent;
 
-  color: #ffffff;
+  color: #17130d;
 
-  font-size: 16px;
+  font-size: 24px;
 
   line-height: 1;
 
   transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
     color 0.3s ease,
     transform 0.3s ease;
 }
 
 .luxora-theme-btn:hover {
-  background: rgba(184, 149, 84, 0.18);
-
   border-color: #b89554;
 
-  color: #d4af6a;
+  color: #c5a469;
 
   transform: rotate(15deg);
 }
@@ -420,8 +442,10 @@
 
   padding: 0;
 
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(23, 19, 13, 0.3);
+
   border-radius: 10px;
+
   background: transparent;
 
   cursor: pointer;
@@ -433,7 +457,7 @@
 
   display: block;
 
-  background: #ffffff;
+  background: #17130d;
 
   transition:
     transform 0.3s ease,
@@ -442,7 +466,7 @@
 }
 
 .luxora-menu-btn:hover {
-  border-color: #b89554;
+  border-color: #c5a469;
 }
 
 .luxora-menu-btn.open span:nth-child(1) {
@@ -468,9 +492,9 @@
 
   padding: 25px 30px 30px;
 
-  background: rgba(13, 16, 14, 0.97);
+  background: rgba(245, 242, 235, 0.97);
 
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(23, 19, 13, 0.08);
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -487,13 +511,13 @@
   display: flex;
   align-items: center;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(23, 19, 13, 0.1);
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(23, 19, 13, 0.78);
 
   font-size: 14px;
   font-weight: 600;
-
+  font-family: "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0.18em;
 
   text-transform: uppercase;
@@ -505,7 +529,7 @@
 
 .lux-mobile-links a:hover,
 .lux-mobile-links a.active {
-  color: #d4af6a;
+  color: #b89554;
 
   padding-left: 8px;
 }
@@ -538,39 +562,48 @@
 
   font-size: 14px;
   font-weight: 600;
-
+  font-family: "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0.15em;
 
   text-transform: uppercase;
 }
 
 .luxora-mobile-login {
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(23, 19, 13, 0.25);
+
   border-radius: 10px;
-  color: #ffffff;
+
+  color: #17130d;
+
+  background: transparent;
 }
 
 .luxora-mobile-signup {
-  background: #b89554;
+  background: #c5a469;
 
   border: 1px solid #b89554;
+
   border-radius: 10px;
+
   color: #11130f;
 }
 
 .luxora-mobile-account {
   border: 1px solid #b89554;
+
   border-radius: 10px;
-  color: #d4af6a;
+
+  color: #b89554;
 }
 
 .luxora-mobile-logout {
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(23, 19, 13, 0.25);
+
   border-radius: 10px;
 
   background: transparent;
 
-  color: #ffffff;
+  color: #17130d;
 
   cursor: pointer;
 }
@@ -581,6 +614,178 @@
 
 .luxora-mobile-menu.open {
   display: block;
+}
+
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+body.dark .luxora-hotel-header {
+  color: #ffffff;
+}
+
+body.dark .luxora-hotel-header.scrolling {
+  background: rgba(13, 16, 14, 0.94);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================
+   DARK MODE — LOGO
+   ========================================================== */
+
+body.dark .luxora-brand {
+  color: #ffffff;
+}
+
+body.dark .luxora-brand-text strong {
+  color: #ffffff;
+}
+
+body.dark .luxora-brand-text small {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==========================================================
+   DARK MODE — NAV LINKS
+   ========================================================== */
+
+body.dark .lux-nav-link {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+body.dark .lux-nav-link:hover,
+body.dark .lux-nav-link.active {
+  color: #ffffff;
+}
+
+/* ==========================================================
+   DARK MODE — LOGIN
+   ========================================================== */
+
+body.dark .luxora-login {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+body.dark .luxora-login:hover {
+  color: #d4af6a;
+}
+
+/* ==========================================================
+   DARK MODE — ACCOUNT
+   ========================================================== */
+
+body.dark .luxora-account {
+  border-color: rgba(255, 255, 255, 0.28);
+
+  color: #ffffff;
+}
+
+body.dark .luxora-account:hover {
+  background: rgba(184, 149, 84, 0.16);
+
+  border-color: #b89554;
+
+  color: #d4af6a;
+}
+
+/* ==========================================================
+   DARK MODE — LOGOUT
+   ========================================================== */
+
+body.dark .luxora-logout {
+  border-color: rgba(255, 255, 255, 0.25);
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+body.dark .luxora-logout:hover {
+  border-color: #b89554;
+
+  background: #c5a469;
+
+  color: #11130f;
+}
+
+/* ==========================================================
+   DARK MODE — THEME BUTTON
+   ========================================================== */
+
+body.dark .luxora-theme-btn {
+  border-color: rgba(255, 255, 255, 0.28);
+
+  color: #ffffff;
+}
+
+body.dark .luxora-theme-btn:hover {
+  background: rgba(184, 149, 84, 0.18);
+
+  border-color: #b89554;
+
+  color: #d4af6a;
+}
+
+/* ==========================================================
+   DARK MODE — MENU BUTTON
+   ========================================================== */
+
+body.dark .luxora-menu-btn {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark .luxora-menu-btn span {
+  background: #ffffff;
+}
+
+/* ==========================================================
+   DARK MODE — MOBILE MENU
+   ========================================================== */
+
+body.dark .luxora-mobile-menu {
+  background: rgba(13, 16, 14, 0.97);
+
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .lux-mobile-links a {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+body.dark .lux-mobile-links a:hover,
+body.dark .lux-mobile-links a.active {
+  color: #d4af6a;
+}
+
+/* ==========================================================
+   DARK MODE — MOBILE AUTH
+   ========================================================== */
+
+body.dark .luxora-mobile-login {
+  border-color: rgba(255, 255, 255, 0.25);
+
+  color: #ffffff;
+}
+
+body.dark .luxora-mobile-signup {
+  background: #c5a469;
+
+  border-color: #b89554;
+
+  color: #11130f;
+}
+
+body.dark .luxora-mobile-account {
+  border-color: #b89554;
+
+  color: #d4af6a;
+}
+
+body.dark .luxora-mobile-logout {
+  border-color: rgba(255, 255, 255, 0.25);
+
+  color: #ffffff;
 }
 
 /* ==========================================================
@@ -604,6 +809,7 @@
 
   .lux-nav-link {
     font-size: 7px;
+
     letter-spacing: 0.13em;
   }
 

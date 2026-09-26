@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUXORA | Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+
+  <body>
+    <div class="auth-page">
+      <div class="auth-image">
+        <div class="image-overlay"></div>
+
+        <a
+          href="index.html"
+          class="luxora-brand"
+          aria-label="LUXORA Hotel Home"
+        >
+          <span class="luxora-brand-mark">L</span>
+
+          <span class="luxora-brand-text">
+            <strong>LUXORA</strong>
+            <small>HOTEL &amp; RESIDENCES</small>
+          </span>
+        </a>
+        <div class="image-content">
+          <p>WELCOME TO LUXORA</p>
+
+          <h1>
+            Your private world
+            <br />
+            <em>awaits.</em>
+          </h1>
+
+          <span> Luxury. Comfort. Unforgettable moments. </span>
+        </div>
+      </div>
+
+      <div class="auth-panel">
+        <div class="auth-top">
+          <a
+            href="index.html"
+            class="luxora-brand"
+            aria-label="LUXORA Hotel Home"
+          >
+            <span class="luxora-brand-mark">L</span>
+
+            <span class="luxora-brand-text">
+              <strong>LUXORA</strong>
+              <small>HOTEL &amp; RESIDENCES</small>
+            </span>
+          </a>
+
+          <button id="themeTgl" class="theme-btn">☾</button>
+        </div>
+
+        <div class="auth-box">
+          <p class="eyebrow">WELCOME BACK</p>
+
+          <h2>
+            Sign in to
+            <br />
+            <em>your account.</em>
+          </h2>
+
+          <p class="auth-description">
+            Access your reservations and continue your LUXORA journey.
+          </p>
+
+          <form id="loginForm">
+            <div class="input-group">
+              <label for="loginEmail"> EMAIL ADDRESS </label>
+
+              <input
+                type="email"
+                id="loginEmail"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <div class="label-row">
+                <label for="loginPassword"> PASSWORD </label>
+
+                <a href="#" id="forgotPassword"> Forgot password? </a>
+              </div>
+
+              <div class="password-field">
+                <input
+                  type="password"
+                  id="loginPassword"
+                  placeholder="Enter your password"
+                  required
+                />
+
+                <button
+                  type="button"
+                  class="show-password"
+                  data-target="loginPassword"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+
+            <label class="remember">
+              <input type="checkbox" id="rememberMe" />
+
+              <span> Remember me </span>
+            </label>
+
+            <button type="submit" class="auth-btn">
+              SIGN IN
+              <span>→</span>
+            </button>
+          </form>
+
+          <div class="divider">
+            <span>OR</span>
+          </div>
+
+          <p class="switch-auth">
+            Don't have an account?
+            <a href="signup.html"> Create one </a>
+          </p>
+
+          <a href="landing.html" class="back-home"> ← Back to LUXORA </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+  </body>
+</html>

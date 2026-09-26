@@ -1,0 +1,1055 @@
+/* ==========================================================
+   LUXORA LANDING PAGE
+   ========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f4f1ea;
+  color: #171613;
+  overflow-x: hidden;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ==========================================================
+   LOADER
+   ========================================================== */
+
+.loader {
+  position: fixed;
+  inset: 0;
+
+  background: #171613;
+  color: #f4f1ea;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: hideLoader 1.2s 1s forwards;
+}
+
+.loader-logo {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 40px;
+
+  letter-spacing: 10px;
+
+  animation: loaderPulse 0.8s infinite alternate;
+}
+
+@keyframes loaderPulse {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes hideLoader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.hero {
+  position: relative;
+
+  height: 100vh;
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 8%;
+
+  color: white;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  background-image: url(../images/landing-page-photo/photo-1564501049412-61c2a3083791.avif);
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(90deg, rgba(5, 5, 4, 0.82), rgba(5, 5, 4, 0.2)),
+    linear-gradient(0deg, rgba(5, 5, 4, 0.45), transparent 45%);
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+}
+
+.eyebrow {
+  color: #c5a469;
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.29em;
+  line-height: 1.4;
+
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(62px, 8vw, 120px);
+
+  font-weight: 500;
+
+  line-height: 0.84;
+
+  letter-spacing: -4px;
+}
+
+.hero h1 em {
+  font-weight: 400;
+}
+
+.hero-description {
+  max-width: 550px;
+
+  margin: 35px 0;
+
+  color: #ddd;
+
+  font-size: 17px;
+
+  font-weight: 300;
+
+  line-height: 1.95;
+}
+
+.hero-buttons {
+  display: flex;
+
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 15px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  padding: 16px 23px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  transition: all 0.3s ease;
+}
+
+.gold-btn {
+  background: #c5a469;
+
+  color: #171613;
+}
+
+.gold-btn:hover {
+  background: #c5a469;
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.outline-btn {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.outline-btn:hover {
+  background: #c5a469;
+  transform: translateY(-4px);
+  color: #171613;
+}
+
+.hero-footer {
+  position: absolute;
+
+  bottom: 30px;
+
+  left: 8%;
+  right: 8%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  opacity: 0.7;
+}
+
+.hero-line {
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================
+   SECTIONS
+   ========================================================== */
+
+.section {
+  padding: 125px 8%;
+}
+
+.section-number {
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+
+  padding-top: 15px;
+
+  margin-bottom: 85px;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.intro-grid,
+.experience-header,
+.rooms-header {
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 9%;
+}
+
+.dark {
+  color: #b89554;
+}
+
+h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-weight: 600;
+
+  font-size: clamp(48px, 5.7vw, 82px);
+
+  line-height: 0.91;
+
+  letter-spacing: -2px;
+}
+
+h2 em {
+  font-weight: 600;
+  color: #b89554;
+}
+
+.intro-text {
+  padding-top: 10px;
+}
+
+.intro-text p,
+.experience-header > p {
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  color: #716e66;
+
+  margin-bottom: 20px;
+}
+
+.text-link {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid black;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   FEATURE IMAGE
+   ========================================================== */
+
+.feature-image {
+  position: relative;
+
+  height: 75vh;
+
+  min-height: 500px;
+}
+
+.feature-background {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../images/landing-page-photo/photo-1582719478250-c89cae4dc85b.avif");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.feature-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent 55%);
+}
+
+.feature-info {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 8%;
+  right: 8%;
+
+  bottom: 40px;
+
+  color: white;
+
+  display: grid;
+
+  grid-template-columns: 80px 1fr 220px;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+/* ==========================================================
+   EXPERIENCE
+   ========================================================== */
+
+.experience-header {
+  align-items: end;
+
+  margin-bottom: 75px;
+}
+
+.experience-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.experience-grid article {
+  min-height: 270px;
+
+  padding: 28px 25px 20px 0;
+
+  border-right: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.experience-grid article:not(:first-child) {
+  padding-left: 25px;
+}
+
+.experience-grid article:last-child {
+  border-right: none;
+}
+
+.experience-grid article > span {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #92764a;
+}
+
+.experience-icon {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 45px;
+  color: #b59a68;
+  margin: 45px 0 20px;
+}
+
+.experience-grid h3 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 31px;
+
+  font-weight: 500;
+
+  margin-bottom: 12px;
+}
+
+.experience-grid p {
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #77736d;
+}
+
+/* ==========================================================
+   ROOMS
+   ========================================================== */
+
+.rooms-header {
+  align-items: end;
+
+  margin-bottom: 65px;
+}
+
+.view-link {
+  justify-self: end;
+
+  border-bottom: 1px solid #c5a469;
+
+  padding-bottom: 8px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.rooms-grid {
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr 1fr;
+
+  gap: 18px;
+}
+
+.room-card {
+  display: block;
+
+  overflow: hidden;
+}
+
+.room-image {
+  background-size: cover;
+
+  background-position: center;
+
+  transition: transform 0.7s ease;
+  border: 2px solid #c5a469;
+  border-radius: 25px 0 25px 0;
+}
+
+.room-card.large .room-image {
+  height: 480px;
+}
+
+.room-card:hover .room-image {
+  transform: scale(1.035);
+}
+
+.room-one {
+  background-image: url("../images/landing-page-photo/photo-1590490360182-c33d57733427.avif");
+  height: 500px;
+}
+
+.room-two {
+  background-image: url("../images/landing-page-photo/photo-1566665797739-1674de7a421a.avif");
+  height: 440px;
+}
+
+.room-three {
+  background-image: url("../images/landing-page-photo/photo-1591088398332-8a7791972843.avif");
+  height: 400px;
+}
+
+.room-info {
+  padding: 18px 0;
+
+  border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.room-info span,
+.room-info p {
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  color: #89857c;
+
+  text-transform: uppercase;
+}
+
+.room-info h3 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+
+  font-weight: 600;
+  color: #c5a469;
+
+  margin: 7px 0;
+}
+
+/* ==========================================================
+   QUOTE
+   ========================================================== */
+
+.quote-section {
+  padding: 160px 8%;
+
+  text-align: center;
+
+  background: #efede7;
+}
+
+.quote-mark {
+  height: 80px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 100px;
+
+  color: #c5a469;
+}
+
+blockquote {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 6vw, 86px);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -2px;
+}
+
+blockquote em {
+  font-weight: 400;
+  color: #c5a469;
+}
+
+.quote-section p {
+  margin-top: 35px;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+/* ==========================================================
+   STORY
+   ========================================================== */
+
+.story-section {
+  position: relative;
+
+  height: 700px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding-left: 12%;
+}
+
+.story-background {
+  position: absolute;
+
+  inset: 0;
+
+  background-image: url("../images/landing-page-photo/photo-1542314831-068cd1dbfeeb.avif");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.story-section::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.story-card {
+  position: relative;
+  border: 2px solid #c5a469;
+  border-radius: 25px 0 25px 0;
+
+  z-index: 2;
+
+  max-width: 530px;
+
+  padding: 65px 60px;
+
+  background: #f4f1ea;
+}
+
+.story-card h2 {
+  font-size: 64px;
+
+  margin-bottom: 25px;
+}
+
+.story-card > p:not(.eyebrow) {
+  color: #706c63;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+  margin-bottom: 25px;
+}
+
+/* ==========================================================
+   FINAL CTA
+   ========================================================== */
+
+.final-section {
+  padding: 160px 8%;
+
+  text-align: center;
+}
+
+.final-section h2 {
+  margin-bottom: 45px;
+}
+
+.dark-btn {
+  background: #c5a469;
+
+  color: #171613;
+}
+
+.dark-btn:hover {
+  background: #c5a469;
+
+  color: #fff;
+
+  transform: translateY(-4px);
+}
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+body.dark {
+  background: #11110f;
+
+  color: #f4f1ea;
+}
+
+body.dark .section-number {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .intro-text p,
+body.dark .experience-header > p {
+  color: #aaa59a;
+}
+
+body.dark .experience-grid {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .experience-grid article {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .experience-grid p {
+  color: #aaa59a;
+}
+
+body.dark .room-info {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+body.dark .room-info h3 {
+  color: #fff;
+}
+
+body.dark .quote-section {
+  background: #1b1a17;
+}
+
+body.dark .story-card {
+  background: #1b1a17;
+}
+
+body.dark .story-card > p:not(.eyebrow) {
+  color: #aaa59a;
+}
+
+body.dark .dark-btn {
+  background: #c5a469;
+
+  color: #171613;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 100px 7%;
+  }
+
+  .hero h1 {
+    font-size: 76px;
+  }
+
+  .section {
+    padding: 95px 7%;
+  }
+
+  .intro-grid,
+  .experience-header,
+  .rooms-header {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .experience-grid article {
+    border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+  }
+
+  .experience-grid article:nth-child(2) {
+    border-right: none;
+  }
+
+  .rooms-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .room-card.large {
+    grid-column: 1 / -1;
+  }
+
+  .room-card.large .room-image {
+    height: 500px;
+  }
+
+  .feature-image {
+    height: 60vh;
+  }
+
+  .story-section {
+    padding: 0 7%;
+
+    justify-content: center;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 650px;
+
+    padding: 100px 6%;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .hero-footer {
+    left: 6%;
+    right: 6%;
+  }
+
+  .section {
+    padding: 78px 6%;
+  }
+
+  h2 {
+    font-size: 54px;
+  }
+
+  .section-number {
+    margin-bottom: 55px;
+  }
+
+  .feature-image {
+    height: 52vh;
+
+    min-height: 400px;
+  }
+
+  .feature-info {
+    left: 6%;
+    right: 6%;
+
+    grid-template-columns: 40px 1fr;
+  }
+
+  .feature-info span:last-child {
+    display: none;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-grid article,
+  .experience-grid article:not(:first-child) {
+    padding: 25px 0;
+
+    border-right: none;
+  }
+
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-card.large {
+    grid-column: auto;
+  }
+
+  .room-image,
+  .room-card.large .room-image {
+    height: 410px;
+  }
+
+  .quote-section {
+    padding: 100px 6%;
+  }
+
+  blockquote {
+    font-size: 52px;
+  }
+
+  .story-section {
+    height: 650px;
+
+    padding: 0 6%;
+  }
+
+  .story-card {
+    padding: 35px 28px;
+  }
+
+  .story-card h2 {
+    font-size: 52px;
+  }
+
+  .final-section {
+    padding: 100px 6%;
+  }
+}
+
+/* ==========================================================
+   NAVBAR ACCOUNT / LOGOUT SUPPORT
+   ==========================================================
+
+   These styles are kept here only because the shared
+   navbar.js may dynamically create these elements.
+
+   The LOGIN / SIGN UP / ACCOUNT / LOGOUT logic itself
+   remains completely inside navbar.js.
+   ========================================================== */
+
+.nav-account-link {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(184, 149, 84, 0.55);
+
+  color: var(--gold-bright);
+
+  background: rgba(184, 149, 84, 0.08);
+
+  font-family: var(--sans);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-account-link:hover {
+  color: #fff;
+
+  background: rgba(184, 149, 84, 0.18);
+
+  border-color: var(--gold);
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   LOGOUT
+   ========================================================== */
+
+.nav-logout {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: rgba(255, 255, 255, 0.75);
+
+  background: transparent;
+
+  font-family: var(--sans);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-logout:hover {
+  color: #fff;
+
+  border-color: rgba(212, 175, 106, 0.8);
+
+  background: rgba(184, 149, 84, 0.12);
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   MOBILE ACCOUNT / LOGOUT
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .nav-account-link,
+  .nav-logout {
+    width: 100%;
+
+    justify-content: center;
+
+    min-height: 44px;
+  }
+}
+
+/* ==========================================================
+   CURSOR FIX
+   ========================================================== */
+
+body {
+  cursor: auto !important;
+}
+
+a,
+button,
+.nav-account-link,
+.nav-logout {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  cursor: text;
+}

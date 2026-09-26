@@ -379,30 +379,27 @@ body.dark-theme.about-page {
 
 .about-story {
   display: grid;
-
   grid-template-columns: 1.1fr 0.9fr;
-
   min-height: 760px;
 
-  background: var(--dark);
+  background: #f5f2eb;
+  color: #17130d;
 
-  color: #fff;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
 }
 
 .about-story__image {
   position: relative;
-
   min-height: 650px;
-
   overflow: hidden;
 }
 
 .about-story__image img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   min-height: 650px;
 
   object-fit: cover;
@@ -418,14 +415,14 @@ body.dark-theme.about-page {
 
 .about-story__content {
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
   padding: 90px clamp(45px, 7vw, 120px);
 
-  background: var(--dark);
+  background: #f5f2eb;
+
+  transition: background 0.35s ease;
 }
 
 .about-story__content .eyebrow {
@@ -435,66 +432,163 @@ body.dark-theme.about-page {
 .about-story h2 {
   margin: 0 0 35px;
 
-  color: #fff;
+  color: #17130d;
 
   font-family: var(--serif);
-
   font-size: clamp(45px, 5vw, 72px);
-
   font-weight: 500;
-
   line-height: 0.95;
-
   letter-spacing: -0.035em;
+
+  transition: color 0.35s ease;
 }
 
 .about-story h2 em {
-  color: var(--gold-bright);
-
+  color: #b89554;
   font-weight: 400;
-
   font-style: italic;
 }
 
 .about-story p {
   max-width: 520px;
-
   margin: 0 0 20px;
 
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(23, 19, 13, 0.62);
 
   font-family: var(--sans);
-
   font-size: 14px;
-
   line-height: 1.9;
+
+  transition: color 0.35s ease;
 }
 
 .story-line {
   width: 100%;
-
   margin: 35px 0 18px;
 }
 
 .story-line span {
   display: block;
-
   width: 70px;
   height: 1px;
 
-  background: var(--gold);
+  background: #b89554;
 }
 
 .about-story__content > small {
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(23, 19, 13, 0.42);
 
   font-family: var(--sans);
-
   font-size: 9px;
-
   letter-spacing: 0.18em;
-
   text-transform: uppercase;
+
+  transition: color 0.35s ease;
+}
+
+/* ==========================================================
+   STORY — DARK MODE
+   ========================================================== */
+
+body.dark .about-story {
+  background: #0d100e;
+  color: #f5f1e8;
+}
+
+body.dark .about-story__content {
+  background: #0d100e;
+}
+
+body.dark .about-story h2 {
+  color: #ffffff;
+}
+
+body.dark .about-story h2 em {
+  color: #d4af6a;
+}
+
+body.dark .about-story p {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+body.dark .about-story__content > small {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* ==========================================================
+   STORY — TABLET
+   ========================================================== */
+
+@media (max-width: 1100px) {
+  .about-story {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-story__content {
+    padding: 70px 50px;
+  }
+}
+
+/* ==========================================================
+   STORY — 900px
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .about-story {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .about-story__image,
+  .about-story__image img {
+    min-height: 520px;
+  }
+
+  .about-story__content {
+    padding: 90px 8%;
+  }
+}
+
+/* ==========================================================
+   STORY — MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+  .about-story__image,
+  .about-story__image img {
+    min-height: 400px;
+  }
+
+  .about-story__content {
+    padding: 70px 25px;
+  }
+
+  .about-story h2 {
+    font-size: 48px;
+  }
+
+  .about-story p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .story-line {
+    margin: 28px 0 16px;
+  }
+}
+
+/* ==========================================================
+   STORY — VERY SMALL PHONES
+   ========================================================== */
+
+@media (max-width: 380px) {
+  .about-story h2 {
+    font-size: 44px;
+  }
+
+  .about-story__content {
+    padding: 60px 20px;
+  }
 }
 
 /* ==========================================================
@@ -943,7 +1037,42 @@ body.dark-theme.about-page {
 
   line-height: 1.8;
 }
+/* ==========================================================
+   VALUES — DARK MODE
+   ========================================================== */
 
+body.dark .about-values {
+  background: #11110f;
+  color: #f5f1e8;
+}
+
+body.dark .values-title h2 {
+  color: #ffffff;
+}
+
+body.dark .values-title h2 em {
+  color: #d4af6a;
+}
+
+body.dark .values-list {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .value-row {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .value-row > span {
+  color: #d4af6a;
+}
+
+body.dark .value-row h3 {
+  color: #ffffff;
+}
+
+body.dark .value-row p {
+  color: rgba(255, 255, 255, 0.58);
+}
 /* ==========================================================
    CTA
    ========================================================== */
@@ -1085,79 +1214,6 @@ body.dark-theme.about-page {
   background: rgba(184, 149, 84, 0.12);
 
   transform: translateY(-3px);
-}
-
-/* ==========================================================
-   CUSTOM CURSOR
-   ========================================================== */
-
-.luxora-cursor {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  z-index: 2147483647;
-
-  width: 10px;
-  height: 10px;
-
-  border: 1px solid var(--gold-bright);
-
-  border-radius: 50%;
-
-  background: rgba(212, 175, 106, 0.12);
-
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.15),
-    0 0 14px rgba(212, 175, 106, 0.35);
-
-  pointer-events: none;
-
-  transform: translate(-50%, -50%);
-
-  opacity: 1;
-
-  transition:
-    width 0.2s ease,
-    height 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.luxora-cursor.is-hover {
-  width: 28px;
-  height: 28px;
-
-  background: rgba(212, 175, 106, 0.08);
-
-  box-shadow:
-    0 0 0 1px rgba(212, 175, 106, 0.35),
-    0 0 18px rgba(212, 175, 106, 0.3);
-}
-
-@media (min-width: 901px) {
-  .about-page {
-    cursor: none;
-  }
-
-  .about-page a,
-  .about-page button,
-  .about-page input,
-  .about-page textarea,
-  .about-page select {
-    cursor: none;
-  }
-}
-
-@media (max-width: 900px) {
-  .luxora-cursor {
-    display: none !important;
-  }
-
-  .about-page {
-    cursor: auto;
-  }
 }
 
 /* ==========================================================
