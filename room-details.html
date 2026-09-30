@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Discover the Grand Luxury Suite at LUXORA Hotel & Resort."
+    />
+
+    <script src="js/auth-guard.js"></script>
+
+    <title>Room Details | LUXORA</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- PAGE CSS -->
+    <link rel="stylesheet" href="css/room-details.css" />
+
+    <!-- SHARED NAVBAR CSS -->
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <body>
+    <!-- SHARED NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section class="details-hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">LUXORA ACCOMMODATION</p>
+
+        <h1 id="roomTitle">Grand Luxury <em>Suite</em></h1>
+
+        <p id="roomSubtitle">
+          An elegant private sanctuary designed for unforgettable stays.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+
+    <main>
+      <!-- =======================================================
+           ROOM OVERVIEW
+      ======================================================== -->
+
+      <section class="overview-section">
+        <div class="overview-image reveal">
+          <img
+            id="mainRoomImage"
+            src="images/landing-page-photo/photo-1591088398332-8a7791972843.jpg"
+            alt="Grand Luxury Suite bedroom"
+          />
+
+          <button
+            class="image-expand"
+            id="openGallery"
+            type="button"
+            aria-label="Open room gallery"
+          >
+            ⤢
+          </button>
+        </div>
+
+        <div class="overview-content reveal">
+          <p class="eyebrow">YOUR PRIVATE RETREAT</p>
+
+          <h2 id="overviewTitle">Grand Luxury <em>Suite</em></h2>
+
+          <p id="roomDescription">
+            Step into an expansive sanctuary where refined interiors, natural
+            textures and contemporary comforts create an atmosphere of
+            effortless luxury. The Grand Luxury Suite offers generous living
+            space and beautiful views for a truly exceptional stay.
+          </p>
+
+          <!-- ROOM META -->
+
+          <div class="room-meta">
+            <div class="meta-item">
+              <span class="meta-icon">⌂</span>
+
+              <div>
+                <small>SIZE</small>
+                <strong id="roomSize">78 m²</strong>
+              </div>
+            </div>
+
+            <div class="meta-item">
+              <span class="meta-icon">♙</span>
+
+              <div>
+                <small>GUESTS</small>
+                <strong id="roomGuests">1 — 2 Guests</strong>
+              </div>
+            </div>
+
+            <div class="meta-item">
+              <span class="meta-icon">♧</span>
+
+              <div>
+                <small>BED</small>
+                <strong id="roomBed">King Bed</strong>
+              </div>
+            </div>
+
+            <div class="meta-item">
+              <span class="meta-icon">◷</span>
+
+              <div>
+                <small>VIEW</small>
+                <strong id="roomView">Panoramic</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRICE + BOOK -->
+
+          <div class="price-area">
+            <div class="price-box">
+              <span class="price-label"> FROM </span>
+
+              <span class="price"> $<strong id="roomPrice">480</strong> </span>
+
+              <span class="per-night"> / night </span>
+            </div>
+
+            <a
+              href="booking.html?room=grand-suite"
+              class="book-btn"
+              id="bookRoomBtn"
+            >
+              Book Your Stay
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================
+           AMENITIES
+      ======================================================== -->
+
+      <section class="amenities-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">EVERYTHING YOU NEED</p>
+
+          <h2>Thoughtful <em>comforts.</em></h2>
+        </div>
+
+        <div class="amenities-grid reveal">
+          <div class="amenity">
+            <span>01</span>
+
+            <div>
+              <h3>King Bed</h3>
+              <p>Premium linens and exceptional comfort.</p>
+            </div>
+          </div>
+
+          <div class="amenity">
+            <span>02</span>
+
+            <div>
+              <h3>Private Terrace</h3>
+              <p>A peaceful outdoor space with beautiful views.</p>
+            </div>
+          </div>
+
+          <div class="amenity">
+            <span>03</span>
+
+            <div>
+              <h3>Rain Shower</h3>
+              <p>Spacious marble bathroom with rainfall shower.</p>
+            </div>
+          </div>
+
+          <div class="amenity">
+            <span>04</span>
+
+            <div>
+              <h3>Smart TV</h3>
+              <p>Enjoy your favorite entertainment in comfort.</p>
+            </div>
+          </div>
+
+          <div class="amenity">
+            <span>05</span>
+
+            <div>
+              <h3>Mini Bar</h3>
+              <p>A curated selection available in your room.</p>
+            </div>
+          </div>
+
+          <div class="amenity">
+            <span>06</span>
+
+            <div>
+              <h3>High-Speed Wi-Fi</h3>
+              <p>Fast and reliable internet throughout your stay.</p>
+            </div>
+          </div>
+
+          <div class="amenity">
+            <span>07</span>
+
+            <div>
+              <h3>24/7 Concierge</h3>
+              <p>Personalized assistance whenever you need it.</p>
+            </div>
+          </div>
+
+          <div class="amenity">
+            <span>08</span>
+
+            <div>
+              <h3>Room Service</h3>
+              <p>Dining delivered privately to your room.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================
+           GALLERY
+      ======================================================== -->
+
+      <section class="gallery-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">A GLIMPSE INSIDE</p>
+
+          <h2>Your space, <em>beautifully.</em></h2>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <!-- IMAGE 1 -->
+
+          <button
+            class="gallery-item gallery-large"
+            type="button"
+            data-image="images/main-page-photo/photo-1611892440504-42a792e24d32.avif"
+            aria-label="View luxury bedroom"
+          >
+            <img
+              src="images/main-page-photo/photo-1611892440504-42a792e24d32.avif"
+              alt="Luxury hotel bedroom"
+              loading="lazy"
+            />
+
+            <span>View</span>
+          </button>
+
+          <!-- IMAGE 2 -->
+
+          <button
+            class="gallery-item"
+            type="button"
+            data-image="images/main-page-photo/photo-1618221195710-dd6b41faaea6.avif"
+            aria-label="View luxury hotel interior"
+          >
+            <img
+              src="images/main-page-photo/photo-1618221195710-dd6b41faaea6.avif"
+              alt="Luxury hotel interior"
+              loading="lazy"
+            />
+
+            <span>View</span>
+          </button>
+
+          <!-- IMAGE 3 -->
+
+          <button
+            class="gallery-item"
+            type="button"
+            data-image="images/main-page-photo/photo-1600566753086-00f18fb6b3ea.avif"
+            aria-label="View luxury living area"
+          >
+            <img
+              src="images/main-page-photo/photo-1600566753086-00f18fb6b3ea.avif"
+              alt="Luxury hotel living area"
+              loading="lazy"
+            />
+
+            <span>View</span>
+          </button>
+
+          <!-- IMAGE 4 -->
+
+          <button
+            class="gallery-item"
+            type="button"
+            data-image="images/ourStory-page-photo/photo-1600607687939-ce8a6c25118c.avif"
+            aria-label="View luxury bathroom"
+          >
+            <img
+              src="images/ourStory-page-photo/photo-1600607687939-ce8a6c25118c.avif"
+              alt="Luxury bathroom"
+              loading="lazy"
+            />
+
+            <span>View</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- =======================================================
+           STAY INFORMATION
+      ======================================================== -->
+
+      <section class="stay-section">
+        <div class="stay-content reveal">
+          <p class="eyebrow">YOUR STAY</p>
+
+          <h2>Everything is <em>taken care of.</em></h2>
+
+          <p>
+            From the moment you arrive, our team is dedicated to making your
+            stay effortless. Enjoy attentive service, elegant surroundings and
+            the freedom to simply slow down.
+          </p>
+        </div>
+
+        <div class="stay-info reveal">
+          <div class="info-row">
+            <span>Check-in</span>
+            <strong>From 3:00 PM</strong>
+          </div>
+
+          <div class="info-row">
+            <span>Check-out</span>
+            <strong>Until 12:00 PM</strong>
+          </div>
+
+          <div class="info-row">
+            <span>Cancellation</span>
+            <strong>Flexible</strong>
+          </div>
+
+          <div class="info-row">
+            <span>Breakfast</span>
+            <strong>Available</strong>
+          </div>
+
+          <div class="info-row">
+            <span>Pets</span>
+            <strong>On request</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================
+           BOOKING CTA
+      ======================================================== -->
+
+      <section class="booking-cta">
+        <div class="cta-overlay"></div>
+
+        <div class="cta-content reveal">
+          <p class="eyebrow">READY TO ESCAPE?</p>
+
+          <h2>Your room is waiting for <em>you.</em></h2>
+
+          <p>Reserve your stay and experience LUXORA for yourself.</p>
+
+          <a href="booking.html?room=grand-suite" class="cta-btn">
+            Book Your Stay
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER COMPONENT -->
+    <div id="footer"></div>
+
+    <!-- =========================================================
+         LIGHTBOX
+    ========================================================== -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button
+        class="lightbox-close"
+        id="lightboxClose"
+        type="button"
+        aria-label="Close gallery"
+      >
+        ×
+      </button>
+
+      <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        type="button"
+        aria-label="Previous image"
+      >
+        ‹
+      </button>
+
+      <img id="lightboxImage" src="" alt="Luxury room gallery" />
+
+      <button
+        class="lightbox-next"
+        id="lightboxNext"
+        type="button"
+        aria-label="Next image"
+      >
+        ›
+      </button>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- SHARED NAVBAR JS -->
+    <script src="js/navbar.js"></script>
+
+    <!-- ROOM DETAILS JS -->
+    <script src="js/room-details.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

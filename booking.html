@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Book your luxury stay at LUXORA Hotel & Resort."
+    />
+
+    <meta name="theme-color" content="#0d100e" />
+
+    <!-- AUTH GUARD -->
+    <script src="js/auth-guard.js"></script>
+
+    <title>Book Your Stay | LUXORA</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SHARED NAVBAR CSS -->
+    <link rel="stylesheet" href="css/navbar.css" />
+
+    <!-- BOOKING CSS -->
+    <link rel="stylesheet" href="css/booking.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         SHARED NAVBAR
+    ====================================================== -->
+
+    <div id="navbar"></div>
+
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+    <section class="booking-header">
+      <div class="header-content">
+        <p class="eyebrow">LUXORA HOTEL</p>
+
+        <h1>Book Your <em>Stay.</em></h1>
+
+        <p>
+          Choose your dates, select your suite and prepare for an unforgettable
+          experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BOOKING
+    ====================================================== -->
+
+    <main class="booking-wrapper">
+      <div class="booking-grid">
+        <!-- =================================================
+             BOOKING FORM
+        ================================================== -->
+
+        <section class="booking-form-card">
+          <div class="form-heading">
+            <p class="eyebrow">RESERVATION</p>
+
+            <h2>Your stay starts <em>here.</em></h2>
+          </div>
+
+          <form id="bookingForm" novalidate>
+            <!-- ROOM -->
+
+            <div class="form-group">
+              <label for="room">Select Suite</label>
+
+              <select id="room" required>
+                <option value="">Choose a suite</option>
+
+                <option value="Grand Luxury Suite" data-price="480">
+                  Grand Luxury Suite — $480/night
+                </option>
+
+                <option value="Terrace Room" data-price="320">
+                  Terrace Room — $320/night
+                </option>
+
+                <option value="City Residence" data-price="620">
+                  City Residence — $620/night
+                </option>
+
+                <option value="Presidential Suite" data-price="980">
+                  Presidential Suite — $980/night
+                </option>
+
+                <option value="Deluxe King Room" data-price="260">
+                  Deluxe King Room — $260/night
+                </option>
+
+                <option value="Family Residence" data-price="740">
+                  Family Residence — $740/night
+                </option>
+              </select>
+
+              <small class="error" id="roomError"></small>
+            </div>
+
+            <!-- DATES -->
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="checkIn">Check-in</label>
+
+                <input type="date" id="checkIn" required />
+
+                <small class="error" id="checkInError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="checkOut">Check-out</label>
+
+                <input type="date" id="checkOut" required />
+
+                <small class="error" id="checkOutError"></small>
+              </div>
+            </div>
+
+            <!-- GUESTS -->
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="adults">Adults</label>
+
+                <select id="adults">
+                  <option value="1">1 Adult</option>
+                  <option value="2">2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="children">Children</label>
+
+                <select id="children">
+                  <option value="0">No Children</option>
+                  <option value="1">1 Child</option>
+                  <option value="2">2 Children</option>
+                  <option value="3">3 Children</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- DIVIDER -->
+
+            <div class="form-divider">
+              <span>Guest Information</span>
+            </div>
+
+            <!-- FIRST + LAST NAME -->
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+
+                <input
+                  type="text"
+                  id="firstName"
+                  placeholder="First name"
+                  required
+                />
+
+                <small class="error" id="firstNameError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+
+                <input
+                  type="text"
+                  id="lastName"
+                  placeholder="Last name"
+                  required
+                />
+
+                <small class="error" id="lastNameError"></small>
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
+              />
+
+              <small class="error" id="emailError"></small>
+            </div>
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+
+              <input
+                type="tel"
+                id="phone"
+                placeholder="+93 700 000 000"
+                required
+              />
+
+              <small class="error" id="phoneError"></small>
+            </div>
+
+            <!-- SPECIAL REQUESTS -->
+
+            <div class="form-group">
+              <label for="requests">
+                Special Requests
+                <span>Optional</span>
+              </label>
+
+              <textarea
+                id="requests"
+                rows="4"
+                placeholder="Tell us anything that would make your stay special..."
+              ></textarea>
+            </div>
+
+            <!-- TERMS -->
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="terms" required />
+
+              <span>
+                I agree to the reservation terms and privacy policy.
+              </span>
+            </label>
+
+            <small class="error terms-error" id="termsError"></small>
+
+            <!-- CONFIRM -->
+
+            <button type="submit" class="confirm-btn">
+              Confirm Reservation
+              <span>→</span>
+            </button>
+          </form>
+        </section>
+
+        <!-- =================================================
+             SUMMARY
+        ================================================== -->
+
+        <aside class="booking-summary">
+          <div class="summary-card">
+            <p class="eyebrow">YOUR RESERVATION</p>
+
+            <h2>Stay <em>Summary</em></h2>
+
+            <!-- ROOM SUMMARY -->
+
+            <div class="summary-room">
+              <div class="summary-image">
+                <img
+                  id="summaryImage"
+                  src="images/main-page-photo/photo-1611892440504-42a792e24d32.avif"
+                  alt="Luxury suite"
+                />
+              </div>
+
+              <div>
+                <h3 id="summaryRoom">Select a suite</h3>
+
+                <p>LUXORA Hotel</p>
+              </div>
+            </div>
+
+            <!-- DATES + GUESTS -->
+
+            <div class="summary-details">
+              <div>
+                <span>Check-in</span>
+                <strong id="summaryCheckIn">—</strong>
+              </div>
+
+              <div>
+                <span>Check-out</span>
+                <strong id="summaryCheckOut">—</strong>
+              </div>
+
+              <div>
+                <span>Guests</span>
+                <strong id="summaryGuests">1 Adult</strong>
+              </div>
+            </div>
+
+            <!-- PRICE -->
+
+            <div class="summary-price">
+              <div>
+                <span>Nightly rate</span>
+
+                <strong> $<span id="nightlyPrice">0</span> </strong>
+              </div>
+
+              <div>
+                <span>Nights</span>
+
+                <strong id="totalNights">0</strong>
+              </div>
+
+              <div class="total-row">
+                <span>Total</span>
+
+                <strong> $<span id="totalPrice">0</span> </strong>
+              </div>
+            </div>
+
+            <!-- NOTE -->
+
+            <div class="summary-note">
+              <span>✦</span>
+
+              <p>
+                Your reservation can be reviewed and managed from your My
+                Booking page.
+              </p>
+            </div>
+          </div>
+
+          <!-- HELP -->
+
+          <div class="help-card">
+            <span class="help-icon">?</span>
+
+            <div>
+              <h3>Need assistance?</h3>
+
+              <p>
+                Our concierge team is available to help with your reservation.
+              </p>
+
+              <a href="contact.html"> Contact Concierge → </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- =====================================================
+         SUCCESS MODAL
+    ====================================================== -->
+
+    <div class="success-modal" id="successModal">
+      <div class="success-card">
+        <button
+          class="modal-close"
+          id="modalClose"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="success-icon">✓</div>
+
+        <p class="eyebrow">RESERVATION CONFIRMED</p>
+
+        <h2>Your stay is <em>reserved.</em></h2>
+
+        <p>
+          Thank you for choosing LUXORA. Your reservation has been saved
+          successfully.
+        </p>
+
+        <div class="confirmation-number">
+          <span>Confirmation</span>
+
+          <strong id="confirmationNumber"> LUX-000000 </strong>
+        </div>
+
+        <a href="profile.html" class="view-booking-btn"> View My Booking </a>
+
+        <a href="rooms.html" class="back-rooms"> Explore More Suites </a>
+      </div>
+    </div>
+    <!-- FOOTER COMPONENT -->
+    <div id="footer"></div>
+
+    <!-- TOAST -->
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/navbar.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

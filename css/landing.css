@@ -412,9 +412,9 @@ h2 em {
 }
 
 .experience-grid article > span {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
-
+  font-family: "Cormorant Garamond", Georgia, serif;
   color: #92764a;
 }
 

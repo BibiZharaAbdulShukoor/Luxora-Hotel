@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="js/auth-guard.js"></script>
+
+    <title>Rooms & Suites | LUXORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ================= SHARED NAVBAR CSS ================= -->
+
+    <link rel="stylesheet" href="css/navbar.css" />
+
+    <!-- ================= ROOMS CSS ================= -->
+
+    <link rel="stylesheet" href="css/rooms.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <div id="navbar"></div>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="rooms-hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">STAY WITH DISTINCTION</p>
+
+        <h1>Rooms & <em>Suites</em></h1>
+
+        <p>
+          Discover beautifully designed spaces where refined comfort, timeless
+          elegance, and unforgettable moments come together.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="rooms-intro">
+      <div class="intro-heading reveal">
+        <p class="eyebrow">YOUR PRIVATE RETREAT</p>
+
+        <h2>Designed for <em>beautiful living.</em></h2>
+      </div>
+
+      <div class="intro-text reveal">
+        <p>
+          Every LUXORA room is thoughtfully created to offer a quiet escape from
+          the ordinary. Natural textures, elegant interiors and modern comforts
+          create a space that feels both sophisticated and deeply welcoming.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FILTER ================= -->
+
+    <section class="rooms-section">
+      <div class="rooms-header reveal">
+        <div>
+          <p class="eyebrow">EXPLORE LUXORA</p>
+
+          <h2>Find your perfect <em>stay.</em></h2>
+        </div>
+
+        <div class="room-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+
+          <button class="filter-btn" data-filter="suite">Suites</button>
+
+          <button class="filter-btn" data-filter="room">Rooms</button>
+
+          <button class="filter-btn" data-filter="residence">Residences</button>
+        </div>
+      </div>
+
+      <!-- ================= ROOM GRID ================= -->
+
+      <div class="rooms-grid">
+        <!-- ================= ROOM 1 ================= -->
+
+        <article class="room-card reveal" data-category="suite">
+          <div class="room-image">
+            <img
+              src="images/room-page-photo/photo-1611892440504-42a792e24d32.avif"
+              alt="Grand Luxury Suite"
+            />
+
+            <span class="room-tag"> Signature </span>
+
+            <button class="favorite-btn" aria-label="Add to favorites">
+              ♡
+            </button>
+
+            <div class="image-overlay"></div>
+          </div>
+
+          <div class="room-content">
+            <div class="room-top">
+              <h3>Grand Luxury Suite</h3>
+
+              <div class="rating">
+                <span>★</span>
+                4.9
+              </div>
+            </div>
+
+            <p class="room-description">
+              An expansive sanctuary featuring elegant furnishings, panoramic
+              views and a private living space.
+            </p>
+
+            <div class="room-info">
+              <span>01 — 02 Guests</span>
+              <span>78 m²</span>
+              <span>King Bed</span>
+            </div>
+
+            <div class="room-bottom">
+              <div class="price">
+                <strong>$480</strong>
+                <span>/ night</span>
+              </div>
+
+              <a href="room-details.html?room=grand-suite" class="details-btn">
+                View Details
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= ROOM 2 ================= -->
+
+        <article class="room-card reveal" data-category="room">
+          <div class="room-image">
+            <img
+              src="images/room-page-photo/photo-1566665797739-1674de7a421a.avif"
+              alt="Terrace Room"
+            />
+
+            <span class="room-tag"> Popular </span>
+
+            <button class="favorite-btn" aria-label="Add to favorites">
+              ♡
+            </button>
+
+            <div class="image-overlay"></div>
+          </div>
+
+          <div class="room-content">
+            <div class="room-top">
+              <h3>Terrace Room</h3>
+
+              <div class="rating">
+                <span>★</span>
+                4.8
+              </div>
+            </div>
+
+            <p class="room-description">
+              A warm and sophisticated room opening onto a private terrace with
+              beautiful city views.
+            </p>
+
+            <div class="room-info">
+              <span>01 — 02 Guests</span>
+              <span>46 m²</span>
+              <span>King Bed</span>
+            </div>
+
+            <div class="room-bottom">
+              <div class="price">
+                <strong>$320</strong>
+                <span>/ night</span>
+              </div>
+
+              <a href="room-details.html?room=terrace-room" class="details-btn">
+                View Details
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= ROOM 3 ================= -->
+
+        <article class="room-card reveal" data-category="residence">
+          <div class="room-image">
+            <img
+              src="images/room-page-photo/photo-1600607687939-ce8a6c25118c.avif"
+              alt="City Residence"
+            />
+
+            <span class="room-tag"> Residence </span>
+
+            <button class="favorite-btn" aria-label="Add to favorites">
+              ♡
+            </button>
+
+            <div class="image-overlay"></div>
+          </div>
+
+          <div class="room-content">
+            <div class="room-top">
+              <h3>City Residence</h3>
+
+              <div class="rating">
+                <span>★</span>
+                5.0
+              </div>
+            </div>
+
+            <p class="room-description">
+              A spacious residential-style retreat designed for extended stays
+              and effortless living.
+            </p>
+
+            <div class="room-info">
+              <span>01 — 04 Guests</span>
+              <span>96 m²</span>
+              <span>2 Bedrooms</span>
+            </div>
+
+            <div class="room-bottom">
+              <div class="price">
+                <strong>$620</strong>
+                <span>/ night</span>
+              </div>
+
+              <a
+                href="room-details.html?room=city-residence"
+                class="details-btn"
+              >
+                View Details
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= ROOM 4 ================= -->
+
+        <article class="room-card reveal" data-category="suite">
+          <div class="room-image">
+            <img
+              src="images/room-page-photo/photo-1590490360182-c33d57733427.avif"
+              alt="Presidential Suite"
+            />
+
+            <span class="room-tag"> Ultra Luxury </span>
+
+            <button class="favorite-btn" aria-label="Add to favorites">
+              ♡
+            </button>
+
+            <div class="image-overlay"></div>
+          </div>
+
+          <div class="room-content">
+            <div class="room-top">
+              <h3>Presidential Suite</h3>
+
+              <div class="rating">
+                <span>★</span>
+                5.0
+              </div>
+            </div>
+
+            <p class="room-description">
+              Our most prestigious suite, combining extraordinary space, private
+              dining and exceptional panoramic views.
+            </p>
+
+            <div class="room-info">
+              <span>01 — 04 Guests</span>
+              <span>142 m²</span>
+              <span>King Bed</span>
+            </div>
+
+            <div class="room-bottom">
+              <div class="price">
+                <strong>$980</strong>
+                <span>/ night</span>
+              </div>
+
+              <a
+                href="room-details.html?room=presidential-suite"
+                class="details-btn"
+              >
+                View Details
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= ROOM 5 ================= -->
+
+        <article class="room-card reveal" data-category="room">
+          <div class="room-image">
+            <img
+              src="images/room-page-photo/photo-1618221195710-dd6b41faaea6.avif"
+              alt="Deluxe King Room"
+            />
+
+            <span class="room-tag"> Deluxe </span>
+
+            <button class="favorite-btn" aria-label="Add to favorites">
+              ♡
+            </button>
+
+            <div class="image-overlay"></div>
+          </div>
+
+          <div class="room-content">
+            <div class="room-top">
+              <h3>Deluxe King Room</h3>
+
+              <div class="rating">
+                <span>★</span>
+                4.7
+              </div>
+            </div>
+
+            <p class="room-description">
+              A refined retreat with contemporary details, soft textures and
+              everything you need for a restful stay.
+            </p>
+
+            <div class="room-info">
+              <span>01 — 02 Guests</span>
+              <span>38 m²</span>
+              <span>King Bed</span>
+            </div>
+
+            <div class="room-bottom">
+              <div class="price">
+                <strong>$260</strong>
+                <span>/ night</span>
+              </div>
+
+              <a href="room-details.html?room=deluxe-room" class="details-btn">
+                View Details
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================= ROOM 6 ================= -->
+
+        <article class="room-card reveal" data-category="residence">
+          <div class="room-image">
+            <img
+              src="images/room-page-photo/photo-1600607687920-4e2a09cf159d.avif"
+              alt="LUXORA Family Residence"
+            />
+
+            <span class="room-tag"> Family </span>
+
+            <button class="favorite-btn" aria-label="Add to favorites">
+              ♡
+            </button>
+
+            <div class="image-overlay"></div>
+          </div>
+
+          <div class="room-content">
+            <div class="room-top">
+              <h3>Family Residence</h3>
+
+              <div class="rating">
+                <span>★</span>
+                4.9
+              </div>
+            </div>
+
+            <p class="room-description">
+              A generous private residence designed for families, featuring
+              multiple bedrooms and a comfortable living area.
+            </p>
+
+            <div class="room-info">
+              <span>01 — 05 Guests</span>
+              <span>118 m²</span>
+              <span>2 Bedrooms</span>
+            </div>
+
+            <div class="room-bottom">
+              <div class="price">
+                <strong>$740</strong>
+                <span>/ night</span>
+              </div>
+
+              <a
+                href="room-details.html?room=family-residence"
+                class="details-btn"
+              >
+                View Details
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE BANNER ================= -->
+
+    <section class="experience-banner">
+      <div class="experience-image"></div>
+
+      <div class="experience-overlay"></div>
+
+      <div class="experience-content reveal">
+        <p class="eyebrow">MORE THAN A ROOM</p>
+
+        <h2>
+          Every stay becomes<br />
+          a <em>memory.</em>
+        </h2>
+
+        <p>
+          From personalized concierge service to quiet mornings and
+          unforgettable evenings, LUXORA is designed around you.
+        </p>
+
+        <a href="landing.html" class="outline-btn">
+          Discover The Experience
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER COMPONENT -->
+    <div id="footer"></div>
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="toast" id="toast"></div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/navbar.js"></script>
+    <script src="js/rooms.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

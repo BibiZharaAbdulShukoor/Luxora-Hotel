@@ -1,0 +1,749 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   ROOT VARIABLES
+===================================================== */
+
+:root {
+  --bg: #f5f2eb;
+  --surface: #ebe6dc;
+  --card: #faf9f5;
+  --text: #171613;
+  --muted: #716c63;
+  --gold: #c5a469;
+  --gold-light: #d4af6a;
+  --border: rgba(23, 22, 19, 0.12);
+  --black: #11110f;
+  --white: #fff;
+}
+
+body.dark {
+  --bg: #11110f;
+  --surface: #181714;
+  --card: #1d1c19;
+  --text: #f4f1ea;
+  --muted: #a6a198;
+  --gold: #c5a469;
+  --gold-light: #d5ba85;
+  --border: rgba(255, 255, 255, 0.12);
+  --black: #080807;
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =====================================================
+   BOOKING HEADER
+===================================================== */
+
+.booking-header {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.48)),
+    url("../images/landing-page-photo/photo-1564501049412-61c2a3083791.avif")
+      center / cover;
+}
+
+.header-content {
+  max-width: 760px;
+  padding: 120px 20px 60px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.header-content .eyebrow {
+  color: var(--gold-light);
+}
+
+.header-content h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(60px, 8vw, 95px);
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.header-content h1 em {
+  color: var(--gold-light);
+}
+
+.header-content p:last-child {
+  max-width: 540px;
+  margin: 28px auto 0;
+  font-size: 17px;
+  opacity: 0.82;
+}
+
+/* =====================================================
+   BOOKING WRAPPER
+===================================================== */
+
+.booking-wrapper {
+  padding: 100px 8%;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.booking-form-card {
+  background: var(--card);
+  padding: 55px;
+  border: 1px solid var(--border);
+}
+
+.form-heading {
+  margin-bottom: 45px;
+}
+
+.form-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.form-heading h2 em {
+  color: var(--gold);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.form-group label span {
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  padding: 14px 15px;
+  outline: none;
+  font-size: 12px;
+  transition: 0.3s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.error {
+  display: block;
+  color: #c65c50;
+  font-size: 9px;
+  margin-top: 5px;
+  min-height: 12px;
+}
+
+.input-error {
+  border-color: #c65c50 !important;
+}
+
+/* =====================================================
+   FORM DIVIDER
+===================================================== */
+
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 45px 0 30px;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: "";
+  height: 1px;
+  background: var(--border);
+  flex: 1;
+}
+
+.form-divider span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+}
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  accent-color: var(--gold);
+  margin-top: 4px;
+}
+
+.terms-error {
+  margin-left: 22px;
+}
+
+/* =====================================================
+   CONFIRM BUTTON
+===================================================== */
+
+.confirm-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 17px;
+  border: none;
+  border-radius: 10px;
+  background: var(--gold);
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  transition: 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background: var(--gold-light);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.confirm-btn span {
+  transition: 0.3s ease;
+}
+
+.confirm-btn:hover span {
+  transform: translateX(5px);
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.booking-summary {
+  position: sticky;
+  top: 110px;
+}
+
+.summary-card {
+  background: var(--surface);
+  padding: 40px;
+  border: 1px solid var(--border);
+}
+
+.summary-card h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.summary-card h2 em {
+  color: var(--gold);
+}
+
+/* =====================================================
+   SUMMARY ROOM
+===================================================== */
+
+.summary-room {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 25px;
+}
+
+.summary-image {
+  height: 220px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: ipx solid var(--gold);
+  border-radius: 20px;
+}
+
+.summary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.summary-room h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.summary-room p {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+/* =====================================================
+   SUMMARY DETAILS
+===================================================== */
+
+.summary-details {
+  padding: 25px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-details > div,
+.summary-price > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.summary-details span,
+.summary-price span {
+  color: var(--muted);
+}
+
+.summary-details strong,
+.summary-price strong {
+  font-weight: 500;
+}
+
+/* =====================================================
+   SUMMARY PRICE
+===================================================== */
+
+.summary-price {
+  padding-top: 18px;
+}
+
+.total-row {
+  border-top: 1px solid var(--border);
+  margin-top: 10px;
+  padding-top: 20px !important;
+}
+
+.total-row span {
+  color: var(--text) !important;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+}
+
+.total-row strong {
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+}
+
+/* =====================================================
+   SUMMARY NOTE
+===================================================== */
+
+.summary-note {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 15px;
+  background: var(--card);
+  border-radius: 10px;
+}
+
+.summary-note > span {
+  color: var(--gold);
+}
+
+.summary-note p {
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   HELP CARD
+===================================================== */
+
+.help-card {
+  margin-top: 20px;
+  padding: 25px;
+  border: 1px solid var(--border);
+
+  display: flex;
+  gap: 17px;
+}
+
+.help-icon {
+  min-width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+
+  color: var(--gold);
+}
+
+.help-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.help-card p {
+  color: var(--muted);
+  font-size: 10px;
+  margin: 5px 0 12px;
+}
+
+.help-card a {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   SUCCESS MODAL
+===================================================== */
+
+.success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(10px);
+}
+
+.success-modal.open {
+  display: flex;
+}
+
+.success-card {
+  position: relative;
+
+  max-width: 520px;
+  width: 100%;
+
+  padding: 55px 45px;
+
+  background: var(--card);
+  text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+
+  width: 35px;
+  height: 35px;
+
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 25px;
+
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--gold);
+  font-size: 25px;
+}
+
+.success-card h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.success-card h2 em {
+  color: var(--gold);
+}
+
+.success-card > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+
+  margin: 20px auto;
+
+  max-width: 380px;
+}
+
+.confirmation-number {
+  padding: 15px;
+  background: var(--surface);
+  margin: 25px 0;
+  border-radius: 10px;
+}
+
+.confirmation-number span {
+  display: block;
+
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.confirmation-number strong {
+  display: block;
+
+  margin-top: 5px;
+
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+/* =====================================================
+   MODAL BUTTONS
+===================================================== */
+
+.view-booking-btn {
+  display: block;
+
+  padding: 15px;
+
+  background: var(--gold);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+}
+
+.back-rooms {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  color: var(--gold);
+  font-size: 10px;
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  z-index: 1000;
+
+  padding: 14px 20px;
+
+  background: var(--gold-light);
+  color: #fff;
+  border-radius: 10px;
+
+  font-size: 11px;
+
+  transform: translateY(100px);
+  opacity: 0;
+
+  transition: 0.4s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-summary {
+    position: static;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+  .booking-header {
+    min-height: 440px;
+  }
+
+  .booking-wrapper {
+    padding: 65px 5%;
+  }
+
+  .booking-form-card {
+    padding: 30px 20px;
+  }
+
+  .form-heading h2 {
+    font-size: 45px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .summary-card {
+    padding: 30px 20px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 520px) {
+  .header-content h1 {
+    font-size: 58px;
+  }
+
+  .header-content p:last-child {
+    font-size: 12px;
+  }
+
+  .booking-wrapper {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .booking-form-card {
+    padding: 30px 16px;
+  }
+
+  .summary-card h2 {
+    font-size: 43px;
+  }
+
+  .success-card {
+    padding: 45px 22px;
+  }
+
+  .success-card h2 {
+    font-size: 43px;
+  }
+}

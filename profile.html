@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Manage your LUXORA account and reservations."
+    />
+
+    <title>My Account | LUXORA</title>
+
+    <!-- Authentication Guard -->
+    <script src="js/auth-guard.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shared Navbar -->
+    <link rel="stylesheet" href="css/navbar.css" />
+
+    <!-- Profile Page -->
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         SHARED NAVBAR
+    ====================================================== -->
+
+    <div id="navbar"></div>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="profile-hero">
+      <div class="hero-overlay"></div>
+
+      <div class="profile-hero-content">
+        <p class="eyebrow">LUXORA PRIVATE ACCESS</p>
+
+        <h1>My <em>Account.</em></h1>
+
+        <p>Manage your reservations and your LUXORA experience.</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="profile-main">
+      <!-- ===================================================
+           ACCOUNT HEADER
+      ==================================================== -->
+
+      <section class="account-header reveal">
+        <div class="account-avatar" id="accountAvatar">Z</div>
+
+        <div class="account-welcome">
+          <p class="eyebrow">WELCOME BACK</p>
+
+          <h2>
+            <span id="userName">Guest</span>
+          </h2>
+
+          <p id="userEmail">guest@example.com</p>
+        </div>
+
+        <button class="logout-btn" id="logoutBtn" type="button">
+          Logout
+          <span>→</span>
+        </button>
+      </section>
+
+      <!-- ===================================================
+           CONTENT GRID
+      ==================================================== -->
+
+      <section class="account-grid">
+        <!-- =================================================
+             RESERVATION
+        ================================================== -->
+
+        <div class="reservation-card reveal">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">YOUR RESERVATION</p>
+
+              <h2>Upcoming <em>stay.</em></h2>
+            </div>
+
+            <span class="booking-status" id="bookingStatus"> Confirmed </span>
+          </div>
+
+          <!-- ================= BOOKING EXISTS ================= -->
+
+          <div class="booking-content" id="bookingContent">
+            <!-- ROOM -->
+
+            <div class="booking-room">
+              <div class="booking-room-image">
+                <img id="bookingRoomImage" src="" alt="Booked room" />
+              </div>
+
+              <div class="booking-room-info">
+                <p class="eyebrow">RESERVED SUITE</p>
+
+                <h3 id="bookingRoomName">Grand Luxury Suite</h3>
+
+                <p id="bookingConfirmation">Confirmation: LUX-000000</p>
+              </div>
+            </div>
+
+            <!-- DETAILS -->
+
+            <div class="booking-details">
+              <div class="detail-item">
+                <span>Check-in</span>
+
+                <strong id="bookingCheckIn"> — </strong>
+
+                <small> From 3:00 PM </small>
+              </div>
+
+              <div class="detail-item">
+                <span>Check-out</span>
+
+                <strong id="bookingCheckOut"> — </strong>
+
+                <small> Until 12:00 PM </small>
+              </div>
+
+              <div class="detail-item">
+                <span>Guests</span>
+
+                <strong id="bookingGuests"> — </strong>
+
+                <small> Adults & children </small>
+              </div>
+
+              <div class="detail-item">
+                <span>Nights</span>
+
+                <strong id="bookingNights"> — </strong>
+
+                <small> Total stay </small>
+              </div>
+            </div>
+
+            <!-- PRICE -->
+
+            <div class="booking-price">
+              <div>
+                <span> Nightly rate </span>
+
+                <strong id="bookingNightlyRate"> $0 </strong>
+              </div>
+
+              <div>
+                <span> Total </span>
+
+                <strong id="bookingTotal"> $0 </strong>
+              </div>
+            </div>
+
+            <!-- SPECIAL REQUEST -->
+
+            <div class="special-request" id="specialRequestBox">
+              <span> Special request </span>
+
+              <p id="bookingRequest">No special requests.</p>
+            </div>
+
+            <!-- ACTIONS -->
+
+            <div class="booking-actions">
+              <a href="rooms.html" class="secondary-btn">
+                Book Another Stay
+                <span>→</span>
+              </a>
+
+              <button class="cancel-btn" id="cancelBookingBtn" type="button">
+                Cancel Booking
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= EMPTY STATE ================= -->
+
+          <div class="empty-booking" id="emptyBooking" hidden>
+            <div class="empty-icon">✦</div>
+
+            <h3>No reservation yet.</h3>
+
+            <p>Your next unforgettable stay is waiting for you.</p>
+
+            <a href="rooms.html" class="primary-btn">
+              Explore Suites
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="account-sidebar reveal">
+          <!-- ACCOUNT INFO -->
+
+          <div class="side-card">
+            <p class="eyebrow">ACCOUNT</p>
+
+            <h3>Personal <em>details.</em></h3>
+
+            <div class="personal-info">
+              <div class="personal-row">
+                <span> Full name </span>
+
+                <strong id="sideUserName"> — </strong>
+              </div>
+
+              <div class="personal-row">
+                <span> Email </span>
+
+                <strong id="sideUserEmail"> — </strong>
+              </div>
+
+              <div class="personal-row">
+                <span> Member since </span>
+
+                <strong id="memberSince"> — </strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+
+          <div class="side-card quick-card">
+            <p class="eyebrow">QUICK ACCESS</p>
+
+            <h3>Explore <em>LUXORA.</em></h3>
+
+            <div class="quick-links">
+              <a href="rooms.html">
+                <span>Suites</span>
+                <span>→</span>
+              </a>
+
+              <a href="landing.html">
+                <span>Experience</span>
+                <span>→</span>
+              </a>
+
+              <a href="contact.html">
+                <span>Contact Us</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <!-- FOOTER COMPONENT -->
+    <div id="footer"></div>
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- =====================================================
+         SHARED NAVBAR JS
+    ====================================================== -->
+
+    <script src="js/navbar.js"></script>
+
+    <!-- =====================================================
+         PROFILE JS
+    ====================================================== -->
+
+    <script src="js/profile.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

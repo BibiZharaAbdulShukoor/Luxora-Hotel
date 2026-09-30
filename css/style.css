@@ -1645,7 +1645,7 @@ body.dark .experience__list span {
   padding: 14px 18px;
 
   border-left: 2px solid var(--gold);
-
+  border-radius: 10px;
   background: var(--dark);
 
   color: #fff;
