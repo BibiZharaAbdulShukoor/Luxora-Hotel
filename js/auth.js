@@ -18,7 +18,7 @@
       return;
     }
     /* ======================================================
-   THEM, this part handle the dark mode and light mode of page.
+   THEME TOGGLE, this part handle the dark mode and light mode of page.
 ====================================================== */
 
     const themeTgl = document.getElementById("themeTgl");
