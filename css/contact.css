@@ -772,7 +772,7 @@ body.dark {
 
   margin-top: 60px;
 
-  padding: 0 25px;
+  padding: 0 30px;
 
   display: flex;
 
@@ -791,7 +791,7 @@ body.dark {
 
   font-family: "Inter", sans-serif;
 
-  font-size: 10px;
+  font-size: 12px;
 
   font-weight: 600;
 
@@ -1127,7 +1127,7 @@ body.dark {
 
   margin-top: 40px;
 
-  padding: 20px 30px;
+  padding: 10px 30px;
 
   background: var(--contact-gold);
   border-radius: 10px;

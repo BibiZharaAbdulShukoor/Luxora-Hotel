@@ -295,8 +295,8 @@ img {
 .room-card {
   background: var(--card);
 
-  border: 1px solid var(--border);
-
+  border: 1px solid var(--gold);
+  border-radius: 25px 0 25px 0;
   overflow: hidden;
 
   transition:
@@ -368,45 +368,6 @@ img {
   text-transform: uppercase;
 
   backdrop-filter: blur(10px);
-}
-
-.favorite-btn {
-  position: absolute;
-
-  top: 17px;
-
-  right: 17px;
-
-  z-index: 3;
-
-  width: 42px;
-
-  height: 42px;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(255, 255, 255, 0.35);
-
-  background: rgba(0, 0, 0, 0.2);
-
-  color: #fff;
-
-  font-size: 21px;
-
-  cursor: pointer;
-
-  backdrop-filter: blur(10px);
-
-  transition: var(--transition);
-}
-
-.favorite-btn:hover,
-.favorite-btn.liked {
-  background: var(--gold);
-
-  border-color: var(--gold);
-
-  transform: scale(1.08);
 }
 
 /* =========================================================

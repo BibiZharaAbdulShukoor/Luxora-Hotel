@@ -33,53 +33,6 @@ button {
 }
 
 /* ==========================================================
-   LOADER
-   ========================================================== */
-
-.loader {
-  position: fixed;
-  inset: 0;
-
-  background: #171613;
-  color: #f4f1ea;
-
-  z-index: 9999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  animation: hideLoader 1.2s 1s forwards;
-}
-
-.loader-logo {
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 40px;
-
-  letter-spacing: 10px;
-
-  animation: loaderPulse 0.8s infinite alternate;
-}
-
-@keyframes loaderPulse {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0.3;
-  }
-}
-
-@keyframes hideLoader {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* ==========================================================
    HERO
    ========================================================== */
 

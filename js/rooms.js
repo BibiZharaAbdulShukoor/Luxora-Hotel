@@ -33,24 +33,6 @@ filterBtns.forEach((button) => {
 });
 
 /* =========================================================
-   FAVORITES, this is a simple implementation for the favorite button on the room cards.
-   ========================================================= */
-
-const favoriteBtns = document.querySelectorAll(".favorite-btn");
-
-favoriteBtns.forEach((button) => {
-  button.addEventListener("click", () => {
-    button.classList.toggle("liked");
-
-    if (button.classList.contains("liked")) {
-      button.textContent = "♥";
-    } else {
-      button.textContent = "♡";
-    }
-  });
-});
-
-/* =========================================================
    SCROLL REVEAL, this is a simple implementation for the scroll reveal effect on the room cards.
    ========================================================= */
 
