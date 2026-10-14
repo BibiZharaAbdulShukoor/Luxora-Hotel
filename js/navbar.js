@@ -49,6 +49,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const signup = document.getElementById("luxSignup");
 
+  /* USER DROPDOWN ELEMENTS */
+
+  const userDropdown = document.getElementById("luxUserDropdown");
+
+  const userButton = document.getElementById("luxUserBtn");
+
+  const userMenu = document.getElementById("luxUserMenu");
+
+  const dropdownLogout = document.getElementById("luxDropdownLogout");
+
   const mobileLogin = document.getElementById("luxMobileLogin");
 
   const mobileSignup = document.getElementById("luxMobileSignup");
@@ -66,6 +76,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (isGuestLoggedIn) {
     /* DESKTOP */
 
+    /* DESKTOP USER DROPDOWN */
+
     if (login) {
       login.remove();
     }
@@ -74,31 +86,39 @@ document.addEventListener("DOMContentLoaded", async () => {
       signup.remove();
     }
 
-    if (auth) {
-      const account = document.createElement("a");
+    if (userDropdown) {
+      userDropdown.hidden = false;
+    }
 
-      account.href = "profile.html";
+    /* OPEN AND CLOSE USER MENU */
 
-      account.className = "luxora-account";
+    if (userButton && userMenu) {
+      userButton.addEventListener("click", (event) => {
+        event.stopPropagation();
 
-      account.textContent = "My Account";
+        const isOpen = !userMenu.hidden;
 
-      auth.appendChild(account);
+        userMenu.hidden = isOpen;
 
-      const logout = document.createElement("button");
+        userButton.setAttribute("aria-expanded", String(!isOpen));
+      });
 
-      logout.type = "button";
+      document.addEventListener("click", (event) => {
+        if (!userDropdown.contains(event.target)) {
+          userMenu.hidden = true;
 
-      logout.className = "luxora-logout";
+          userButton.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
 
-      logout.textContent = "Logout";
+    /* LOGOUT */
 
-      auth.appendChild(logout);
-
-      logout.addEventListener("click", () => {
+    if (dropdownLogout) {
+      dropdownLogout.addEventListener("click", () => {
         localStorage.removeItem("guestLoggedIn");
 
-        localStorage.removeItem("luxoraCurrentUser");
+        localStorage.removeItem("luxorCurrentUser");
 
         localStorage.removeItem("guestRedirectAfterLogin");
 
@@ -140,7 +160,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       mobile_Logout.addEventListener("click", () => {
         localStorage.removeItem("guestLoggedIn");
 
-        localStorage.removeItem("luxoraCurrentUser");
+        localStorage.removeItem("luxorCurrentUser");
 
         localStorage.removeItem("guestRedirectAfterLogin");
 
@@ -166,7 +186,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   /* ========================================================
-     SCROLL NAVBAR, this part adds a "scrolling" class to the navbar when the user scrolls down the page, which can be used to change the navbar's appearance (e.g., background color, shadow) when scrolling.
+     SCROLL NAVBAR, this part adds a "scrolling" class to the navbar when the user scrolls down the page, \
+     which can be used to change the navbar's appearance (e.g., background color, shadow) when scrolling.
      ======================================================== */
 
   const updateNavHeader = () => {

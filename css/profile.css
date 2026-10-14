@@ -98,10 +98,19 @@ img {
 
   overflow: hidden;
 
-  background-image: url("../images/main-page-photo/photo-1566073771259-6a8506099945.avif");
+  background-image: url("../images/landing-page-photo/Luxury Rooftop Sunset Retreat.png");
 
   background-size: cover;
   background-position: center;
+  transform: scale(1.07);
+
+  animation: heroZoom 14s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1);
+  }
 }
 
 /* Overlay */
@@ -261,37 +270,6 @@ img {
   margin-top: 3px;
 }
 
-.logout-btn {
-  padding: 13px 22px;
-
-  border: 1px solid var(--danger);
-  border-radius: 10px;
-
-  background: transparent;
-
-  color: var(--danger);
-
-  cursor: pointer;
-
-  font-size: 11px;
-
-  letter-spacing: 1.4px;
-
-  text-transform: uppercase;
-
-  transition: 0.3s ease;
-}
-
-.logout-btn span {
-  margin-left: 10px;
-}
-
-.logout-btn:hover {
-  background: var(--danger);
-
-  color: white;
-}
-
 /* =========================================================
    ACCOUNT GRID
 ========================================================= */
@@ -314,7 +292,8 @@ img {
 .side-card {
   background: var(--surface);
 
-  border: 1px solid var(--border);
+  border-radius: 25px 0 25px 0;
+  border: 1px solid var(--accent);
 
   box-shadow: var(--shadow);
 }
@@ -390,7 +369,8 @@ img {
 
 .booking-room-image {
   height: 155px;
-  border-radius: 20px;
+  border-radius: 25px 0 25px 0;
+  border: 1px solid var(--gold);
   overflow: hidden;
 }
 
@@ -867,10 +847,6 @@ img {
     flex-wrap: wrap;
   }
 
-  .logout-btn {
-    margin-left: 100px;
-  }
-
   .booking-details {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -906,12 +882,6 @@ img {
 
   .account-welcome h2 {
     font-size: 29px;
-  }
-
-  .logout-btn {
-    margin-left: 0;
-
-    width: 100%;
   }
 
   .reservation-card {
@@ -1000,4 +970,135 @@ input,
 textarea,
 select {
   cursor: text;
+}
+/* =========================================================
+   PROFILE PAYMENT DETAILS
+========================================================= */
+
+.profile-payment {
+  margin-top: 25px;
+  padding: 25px;
+  background: var(--surface-soft);
+  border: 1px solid var(--accent);
+  border-radius: 18px 0 18px 0;
+  transition:
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.profile-payment-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-payment-heading > i {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.profile-payment-heading h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.profile-payment-heading em {
+  color: var(--accent);
+}
+
+.profile-payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-payment-row span {
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.profile-payment-row strong {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.profile-payment-row.profile-deposit {
+  margin: 12px 0;
+  padding: 15px;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+}
+
+.profile-payment-row.profile-deposit span,
+.profile-payment-row.profile-deposit strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.profile-payment-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.profile-payment-status span {
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.profile-payment-status strong {
+  color: var(--accent);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.profile-payment-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px;
+  background: var(--surface);
+  border-radius: 8px;
+  color: var(--text-soft);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.profile-payment-note i {
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+@media (max-width: 420px) {
+  .profile-payment {
+    padding: 18px 13px;
+  }
+
+  .profile-payment-heading h3 {
+    font-size: 24px;
+  }
+
+  .profile-payment-row {
+    gap: 8px;
+  }
+
+  .profile-payment-row span {
+    font-size: 10px;
+  }
+
+  .profile-payment-row strong {
+    font-size: 12px;
+  }
 }

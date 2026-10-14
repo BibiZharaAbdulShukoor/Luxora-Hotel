@@ -29,6 +29,40 @@ const guestPhone = document.getElementById("phone");
 const requests = document.getElementById("requests");
 
 /* =========================================================
+ This function try to get the name, last name and email from login information to fill out in the form of reservation 
+========================================================= */
+
+function loadBookingUserInformation() {
+  const isLoggedIn = localStorage.getItem("guestLoggedIn");
+
+  const savedUser = localStorage.getItem("luxorCurrentUser");
+
+  if (isLoggedIn !== "true" || !savedUser) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  const user = JSON.parse(savedUser);
+
+  if (guestFirstName) {
+    guestFirstName.value = user.firstName || "";
+    guestFirstName.readOnly = true;
+  }
+
+  if (guestLastName) {
+    guestLastName.value = user.lastName || "";
+    guestLastName.readOnly = true;
+  }
+
+  if (guestEmail) {
+    guestEmail.value = user.email || "";
+    guestEmail.readOnly = true;
+  }
+}
+
+loadBookingUserInformation();
+
+/* =========================================================
    SUMMARY ELEMENTS, this section contains all the elements used in the booking summary
 ========================================================= */
 
@@ -47,6 +81,19 @@ const nightlyPrice = document.getElementById("nightlyPrice");
 const totalOfNights = document.getElementById("totalNights");
 
 const totalOfPrice = document.getElementById("totalPrice");
+/* =========================================================
+Deposit 
+========================================================= */
+
+const paymentTotal = document.getElementById("paymentTotal");
+
+const depositAmount = document.getElementById("depositAmount");
+
+const remainingAmount = document.getElementById("remainingAmount");
+
+const paymentMethod = document.querySelector(
+  'input[name="paymentMethod"]:checked',
+);
 
 /* =========================================================
    ROOM IMAGES, in this section we define the images for each room type
@@ -273,6 +320,35 @@ function updateSummaryPart() {
   /* TOTAL */
 
   const totalAmount = selectedRooms.price * nights;
+
+  /* PAYMENT CALCULATION */
+
+  const deposit = Math.round(totalAmount * 10) / 100;
+
+  const remaining = totalAmount - deposit;
+
+  /* DISPLAY PAYMENT AMOUNTS */
+
+  if (paymentTotal) {
+    paymentTotal.textContent = `$${totalAmount.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`;
+  }
+
+  if (depositAmount) {
+    depositAmount.textContent = `$${deposit.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`;
+  }
+
+  if (remainingAmount) {
+    remainingAmount.textContent = `$${remaining.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`;
+  }
 
   if (totalOfPrice) {
     totalOfPrice.textContent = totalAmount.toLocaleString("en-US");
@@ -518,10 +594,34 @@ if (bookingForm) {
 
       return;
     }
+    /* CHECK PAYMENT METHOD */
+
+    const selectedPaymentMethod = document.querySelector(
+      'input[name="paymentMethod"]:checked',
+    );
+
+    if (!selectedPaymentMethod) {
+      showToast("Please select a payment method.");
+      return;
+    }
 
     const selectedRooms = catchSelectedRoomData();
 
     const nights = calculatingNight();
+
+    /* CALCULATE PAYMENT*/
+
+    const totalAmount = selectedRooms.price * nights;
+
+    const deposit = Math.round(totalAmount * 10) / 100;
+
+    const remaining = totalAmount - deposit;
+
+    /* DEMO PAYMENT STATUS */
+
+    const paymentStatus = "Demo Paid";
+
+    const balanceStatus = "Pay at Hotel";
 
     const confirmation = generateConfirmationNumber();
 
@@ -585,9 +685,23 @@ if (bookingForm) {
 
       specialRequests: requests ? requests.value.trim() : "",
 
-      /* TOTAL */
+      /* TOTAL AND PAYMENT این */
 
-      total: selectedRooms.price * nights,
+      total: totalAmount,
+
+      depositPercentage: 10,
+
+      depositAmount: deposit,
+
+      remainingAmount: remaining,
+
+      paymentMethod: selectedPaymentMethod.value,
+
+      paymentStatus: paymentStatus,
+
+      balanceStatus: balanceStatus,
+
+      paidAt: new Date().toISOString(),
 
       /* CREATED */
 
@@ -603,22 +717,6 @@ if (bookingForm) {
       "luxoraBooking",
       JSON.stringify(booking),
     ); /* json.stringify() is used to convert the booking object into a JSON string before storing it in localStorage */
-
-    /* =====================================================
-       SAVE CURRENT USER, this section saves the current user's information to localStorage for later retrieval
-    ====================================================== */
-
-    const currentUser = {
-      firstName: guestFirstName.value.trim(),
-
-      lastName: guestLastName.value.trim(),
-
-      email: guestEmail.value.trim(),
-
-      phone: guestPhone.value.trim(),
-    };
-
-    localStorage.setItem("luxorCurrentUser", JSON.stringify(currentUser));
 
     /* =====================================================
        LOGGED-IN STATE, this section sets a flag in localStorage to indicate that the guest is logged in

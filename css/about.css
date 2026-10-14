@@ -54,12 +54,20 @@ body.dark-theme.about-page {
 
   inset: 0;
 
-  background: url("../images/ourStory-page-photo/photo-1600607687939-ce8a6c25118c.avif")
-    center center / cover no-repeat;
-
-  transform: scale(1.03);
+  background: url("../images/landing-page-photo/our-story-bg.png") center
+    center / cover no-repeat;
 
   pointer-events: none;
+
+  transform: scale(1.07);
+
+  animation: heroZoom 14s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1);
+  }
 }
 
 .about-hero__overlay {
@@ -756,7 +764,7 @@ body.dark .about-story__content > small {
 
   inset: 0;
 
-  background: url("../images/ourStory-page-photo/photo-1542314831-068cd1dbfeeb.jpg")
+  background: url("../images/landing-page-photo/footer-background.jpeg")
     center / cover no-repeat;
 
   transform: scale(1.02);
@@ -1073,6 +1081,1112 @@ body.dark .value-row h3 {
 body.dark .value-row p {
   color: rgba(255, 255, 255, 0.58);
 }
+
+/* ==========================================================
+   LUXORA HOTEL — FEEDBACK FORM
+   ========================================================== */
+
+.feedback-panel {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: start;
+  gap: 60px;
+  margin-top: 85px;
+  padding: 55px;
+  background: #ffffff;
+  border: 1px solid #d4af6a;
+  border-radius: 25px 0 25px 0;
+}
+
+/* LEFT SIDE */
+
+.feedback-intro {
+  padding-top: 12px;
+}
+
+.feedback-intro .eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #a7834e;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.feedback-intro h2 {
+  margin: 0 0 20px;
+  color: #24231f;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.feedback-intro h2 em {
+  color: #a7834e;
+  font-weight: 400;
+}
+
+.feedback-intro > p {
+  color: #77736c;
+  font-size: 13px;
+  line-height: 2;
+  margin: 0;
+}
+
+.feedback-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #eee8df;
+  color: #827a6e;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.feedback-note i {
+  margin-top: 2px;
+  color: #a7834e;
+  font-size: 18px;
+}
+
+/* FORM LAYOUT */
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+.feedback-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.feedback-field label {
+  color: #39362f;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* INPUTS */
+
+.feedback-field input,
+.feedback-field textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 16px;
+  border: 1px solid #e7e1d7;
+  border-radius: 10px;
+  outline: none;
+  background: #fdfcf9;
+  color: #292720;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.feedback-field input {
+  min-height: 48px;
+}
+
+.feedback-field textarea {
+  min-height: 145px;
+  resize: vertical;
+}
+
+.feedback-field input::placeholder,
+.feedback-field textarea::placeholder {
+  color: #aaa49a;
+  opacity: 1;
+}
+
+.feedback-field input:hover,
+.feedback-field textarea:hover {
+  border-color: #c9b99e;
+}
+
+.feedback-field input:focus,
+.feedback-field textarea:focus {
+  border-color: #a7834e;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(167, 131, 78, 0.09);
+}
+
+/* STAR RATING */
+
+.rating-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.rating-picker button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #d8d2c8;
+  font-size: 23px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rating-picker button:hover {
+  transform: translateY(-2px);
+}
+
+.rating-picker button.active {
+  color: #b18a4d;
+}
+
+.rating-picker button:focus-visible {
+  outline: 2px solid #a7834e;
+  outline-offset: 3px;
+}
+
+.rating-hint {
+  display: block;
+  min-height: 16px;
+  color: #969087;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* SUBMIT BUTTON */
+
+.feedback-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 52px;
+  padding: 15px 22px;
+  border: 1px solid #a7834e;
+  border-radius: 10px;
+  background: #a7834e;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.feedback-submit i {
+  font-size: 13px;
+  transition: transform 0.25s ease;
+}
+
+.feedback-submit:hover {
+  background: #ffffff;
+  color: #92703e;
+}
+
+.feedback-submit:hover i {
+  transform: translateX(4px);
+}
+
+.feedback-submit:focus-visible {
+  outline: 2px solid #a7834e;
+  outline-offset: 4px;
+}
+
+/* SUCCESS AND ERROR MESSAGES */
+
+.feedback-message {
+  display: none;
+  margin: 0;
+  padding: 13px 15px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.feedback-message.success {
+  display: block;
+  border: 1px solid #d5e7d1;
+  background: #f0f6ef;
+  color: #356b3b;
+}
+
+.feedback-message.error {
+  display: block;
+  border: 1px solid #f0d5d0;
+  border-radius: 10px;
+  background: #fbefed;
+  color: #9a3f32;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .feedback-panel {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 60px;
+    padding: 38px;
+  }
+
+  .feedback-intro {
+    max-width: 600px;
+  }
+
+  .feedback-intro h2 {
+    font-size: 44px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .feedback-panel {
+    gap: 28px;
+    margin-top: 45px;
+    padding: 25px 20px;
+  }
+
+  .feedback-intro h2 {
+    font-size: 38px;
+  }
+
+  .feedback-intro > p {
+    font-size: 12px;
+  }
+
+  .feedback-form {
+    gap: 19px;
+  }
+
+  .feedback-field input,
+  .feedback-field textarea {
+    padding: 13px;
+    font-size: 13px;
+  }
+
+  .rating-picker {
+    gap: 5px;
+  }
+
+  .rating-picker button {
+    width: 32px;
+    height: 34px;
+    font-size: 22px;
+  }
+
+  .feedback-submit {
+    min-height: 50px;
+  }
+}
+/* ==========================================================
+   LUXORA — GUEST REVIEW CARDS
+   ========================================================== */
+
+#reviews .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+  margin-top: 35px;
+}
+
+/* Individual review card */
+
+#reviews .review-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 265px;
+  padding: 28px 25px 22px;
+  overflow-wrap: anywhere;
+  background: #ffffff;
+  border: 1px solid #e8e0d3;
+  border-radius: 25px 0 25px 0;
+  box-shadow: 0 5px 18px rgba(40, 32, 20, 0.035);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#reviews .review-card:hover {
+  transform: translateY(-5px);
+  border-color: #c9b18b;
+  box-shadow: 0 14px 35px rgba(40, 32, 20, 0.09);
+}
+
+/* Guest information */
+
+#reviews .review-card-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#reviews .review-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #dfceb2;
+  border-radius: 50%;
+  background: #f5efe5;
+  color: #947344;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#reviews .review-guest {
+  flex: 1;
+  min-width: 0;
+}
+
+#reviews .review-guest h3 {
+  margin: 0 0 5px;
+  color: #28251f;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+#reviews .review-guest span {
+  display: block;
+  color: #969087;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#reviews .review-quote-icon {
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-left: auto;
+  color: #e5dac8;
+  font-size: 23px;
+}
+
+/* Star rating */
+
+#reviews .review-card-stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 17px;
+  color: #b18a4d;
+  font-size: 14px;
+  line-height: 1;
+}
+
+#reviews .review-card-stars i {
+  display: inline-block;
+}
+
+#reviews .review-card-stars i.fa-regular {
+  color: #d8d1c5;
+}
+
+/* Review text */
+
+#reviews .review-text {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  color: #69645b;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.95;
+  text-align: left;
+}
+
+/* Review date */
+
+#reviews .review-date {
+  display: block;
+  margin-top: 23px;
+  padding-top: 15px;
+  border-top: 1px solid #eee9e1;
+  color: #a19a8f;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Newly submitted reviews */
+
+#reviews .review-card.user-review {
+  animation: luxoraReviewAppear 0.45s ease both;
+  border-top: 2px solid #b18a4d;
+}
+
+@keyframes luxoraReviewAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Empty or long text safety */
+
+#reviews .review-card * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#reviews .review-card .review-text {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Tablet */
+
+@media (max-width: 950px) {
+  #reviews .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  #reviews .review-card {
+    padding: 25px 22px 20px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  #reviews .reviews-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+    margin-top: 25px;
+  }
+
+  #reviews .review-card {
+    min-height: 0;
+    padding: 24px 21px 20px;
+  }
+
+  #reviews .review-card-top {
+    margin-bottom: 17px;
+  }
+
+  #reviews .review-avatar {
+    flex-basis: 43px;
+    width: 43px;
+    height: 43px;
+  }
+
+  #reviews .review-text {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+}
+
+/* Respect reduced motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  #reviews .review-card,
+  #reviews .review-card.user-review {
+    animation: none;
+    transition: none;
+  }
+
+  #reviews .review-card:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================================
+   LUXORA — REVIEWS RATING SUMMARY
+   ========================================================== */
+
+#reviews .reviews-summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 35px;
+  margin: 55px 0 0;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+/* Rating number */
+#reviews .reviews-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Average rating */
+#reviews .reviews-rating > strong {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 68px;
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+/* Stars container */
+#reviews .review-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold);
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Individual stars */
+#reviews .review-stars i {
+  display: inline-block;
+}
+
+/* Guest review count */
+#reviews .reviews-rating > span {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+body.dark #reviews .reviews-rating > strong {
+  color: #f5f1e8;
+}
+
+body.dark #reviews .review-stars {
+  color: #d4af6a;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+  #reviews .reviews-summary {
+    gap: 28px;
+    margin-top: 45px;
+    padding: 25px 0;
+  }
+
+  #reviews .reviews-rating > strong {
+    font-size: 60px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+  #reviews .reviews-summary {
+    gap: 22px;
+    margin-top: 35px;
+    padding: 24px 0;
+  }
+
+  #reviews .reviews-rating {
+    gap: 9px;
+  }
+
+  #reviews .reviews-rating > strong {
+    font-size: 54px;
+  }
+
+  #reviews .review-stars {
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  #reviews .reviews-rating > span {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  #reviews .reviews-summary {
+    gap: 16px;
+  }
+
+  #reviews .reviews-rating > strong {
+    font-size: 48px;
+  }
+}
+
+/* ==========================================================
+   LUXORA — REVIEWS HEADING
+   Aligned with other About page headings
+   ========================================================== */
+
+#reviews .reviews-heading {
+  max-width: 720px;
+  margin: 0 auto 55px 0;
+  text-align: left;
+}
+
+/* Small heading */
+#reviews .reviews-heading .eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+/* Main heading */
+#reviews .reviews-heading h2 {
+  margin: 20px 0 25px;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: clamp(50px, 6vw, 78px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+/* Italic heading text */
+#reviews .reviews-heading h2 em {
+  color: var(--gold);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Description */
+#reviews .reviews-heading p {
+  max-width: 580px;
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+/* ==========================================================
+   LUXORA — REVIEWS SUMMARY TEXT
+   ========================================================== */
+
+#reviews .reviews-summary-text {
+  position: relative;
+  max-width: 650px;
+  margin: 65px 0 0;
+  padding: 30px 0 10px 28px;
+  border-left: 2px solid var(--gold);
+  text-align: left;
+}
+
+/* Quote icon */
+#reviews .reviews-summary-text > i {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--gold);
+  font-size: 30px;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+/* Quote paragraph */
+#reviews .reviews-summary-text p {
+  max-width: 580px;
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: clamp(21px, 2.5vw, 28px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+/* ==========================================================
+   REVIEWS — DARK MODE
+   ========================================================== */
+
+body.dark #reviews .reviews-heading h2,
+body.dark #reviews .reviews-summary-text p {
+  color: #f5f1e8;
+}
+
+body.dark #reviews .reviews-heading h2 em,
+body.dark #reviews .reviews-heading .eyebrow,
+body.dark #reviews .reviews-summary-text > i {
+  color: #d4af6a;
+}
+
+/* ==========================================================
+   REVIEWS — TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+  #reviews .reviews-heading {
+    max-width: 650px;
+    margin-bottom: 45px;
+  }
+
+  #reviews .reviews-heading h2 {
+    font-size: clamp(46px, 7vw, 65px);
+  }
+
+  #reviews .reviews-summary-text {
+    max-width: 600px;
+    margin-top: 50px;
+  }
+}
+
+/* ==========================================================
+   REVIEWS — MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+  #reviews .reviews-heading {
+    margin-bottom: 35px;
+  }
+
+  #reviews .reviews-heading .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+  }
+
+  #reviews .reviews-heading h2 {
+    margin: 18px 0 20px;
+    font-size: 45px;
+    line-height: 1;
+  }
+
+  #reviews .reviews-heading p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  #reviews .reviews-summary-text {
+    margin-top: 40px;
+    padding: 22px 0 8px 20px;
+  }
+
+  #reviews .reviews-summary-text > i {
+    margin-bottom: 15px;
+    font-size: 25px;
+  }
+
+  #reviews .reviews-summary-text p {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  #reviews .reviews-heading h2 {
+    font-size: 40px;
+  }
+
+  #reviews .reviews-summary-text p {
+    font-size: 20px;
+  }
+}
+/* ==========================================================
+   REVIEW DELETE BUTTON
+   ========================================================== */
+
+#reviews .review-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  gap: 8px;
+
+  margin-top: 18px;
+  padding: 9px 13px;
+
+  border: 1px solid #c96b60;
+  border-radius: 0;
+
+  background: transparent;
+  color: #b34c42;
+
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+#reviews .review-delete-btn:hover {
+  background: #b34c42;
+  border-color: #b34c42;
+  color: #ffffff;
+}
+
+#reviews .review-delete-btn:focus-visible {
+  outline: 2px solid #b34c42;
+  outline-offset: 3px;
+}
+
+/* Dark mode */
+body.dark #reviews .review-delete-btn {
+  border-color: #d47b70;
+  color: #e99a90;
+}
+
+body.dark #reviews .review-delete-btn:hover {
+  background: #b34c42;
+  border-color: #b34c42;
+  color: #ffffff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #reviews .review-delete-btn {
+    margin-top: 15px;
+    padding: 10px 13px;
+  }
+}
+/* ==========================================================
+   LUXORA — REVIEWS DARK MODE FIX
+   Matches the About page dark theme
+   ========================================================== */
+
+body.dark #reviews .review-card {
+  background: #11110f;
+  border-color: rgba(212, 175, 106, 0.22);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+body.dark #reviews .review-card:hover {
+  background: #151713;
+  border-color: rgba(212, 175, 106, 0.5);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Guest name */
+body.dark #reviews .review-guest h3 {
+  color: #f5f1e8;
+}
+
+/* Guest label */
+body.dark #reviews .review-guest span {
+  color: rgba(245, 241, 232, 0.5);
+}
+
+/* Avatar */
+body.dark #reviews .review-avatar {
+  background: #1b1c17;
+  border-color: rgba(212, 175, 106, 0.35);
+  color: #d4af6a;
+}
+
+/* Quote icon */
+body.dark #reviews .review-quote-icon {
+  color: rgba(212, 175, 106, 0.45);
+}
+
+/* Stars */
+body.dark #reviews .review-card-stars {
+  color: #d4af6a;
+}
+
+body.dark #reviews .review-card-stars i.fa-regular {
+  color: rgba(212, 175, 106, 0.3);
+}
+
+/* Review text */
+body.dark #reviews .review-text {
+  color: rgba(245, 241, 232, 0.68);
+}
+
+/* Review date */
+body.dark #reviews .review-date {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  color: rgba(245, 241, 232, 0.45);
+}
+
+/* Rating summary */
+body.dark #reviews .reviews-summary {
+  border-top-color: rgba(255, 255, 255, 0.12);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark #reviews .reviews-rating > strong {
+  color: #f5f1e8;
+}
+
+body.dark #reviews .review-stars {
+  color: #d4af6a;
+}
+
+body.dark #reviews .reviews-rating > span {
+  color: rgba(245, 241, 232, 0.55);
+}
+
+/* Reviews heading */
+body.dark #reviews .reviews-heading h2 {
+  color: #f5f1e8;
+}
+
+body.dark #reviews .reviews-heading h2 em,
+body.dark #reviews .reviews-heading .eyebrow {
+  color: #d4af6a;
+}
+
+body.dark #reviews .reviews-heading p {
+  color: rgba(245, 241, 232, 0.65);
+}
+
+/* Summary quote */
+body.dark #reviews .reviews-summary-text {
+  border-left-color: #d4af6a;
+}
+
+body.dark #reviews .reviews-summary-text > i {
+  color: #d4af6a;
+}
+
+body.dark #reviews .reviews-summary-text p {
+  color: rgba(245, 241, 232, 0.75);
+}
+
+/* Delete button */
+body.dark #reviews .review-delete-btn {
+  background: transparent;
+  border-color: #d47b70;
+  color: #e99a90;
+}
+
+body.dark #reviews .review-delete-btn:hover {
+  background: #b34c42;
+  border-color: #b34c42;
+  color: #ffffff;
+}
+
+/* Feedback form */
+body.dark .feedback-panel {
+  background: #11110f;
+  border-color: rgba(212, 175, 106, 0.35);
+}
+
+/* Form heading */
+body.dark .feedback-intro h2 {
+  color: #f5f1e8;
+}
+
+body.dark .feedback-intro h2 em,
+body.dark .feedback-intro .eyebrow {
+  color: #d4af6a;
+}
+
+body.dark .feedback-intro > p {
+  color: rgba(245, 241, 232, 0.65);
+}
+
+body.dark .feedback-note {
+  border-top-color: rgba(255, 255, 255, 0.12);
+  color: rgba(245, 241, 232, 0.6);
+}
+
+body.dark .feedback-note i {
+  color: #d4af6a;
+}
+
+/* Form labels */
+body.dark .feedback-field label {
+  color: #f5f1e8;
+}
+
+/* Inputs */
+body.dark .feedback-field input,
+body.dark .feedback-field textarea {
+  background: #191a16;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f5f1e8;
+}
+
+body.dark .feedback-field input::placeholder,
+body.dark .feedback-field textarea::placeholder {
+  color: rgba(245, 241, 232, 0.4);
+}
+
+body.dark .feedback-field input:hover,
+body.dark .feedback-field textarea:hover {
+  border-color: rgba(212, 175, 106, 0.5);
+}
+
+body.dark .feedback-field input:focus,
+body.dark .feedback-field textarea:focus {
+  background: #1b1c17;
+  border-color: #d4af6a;
+  box-shadow: 0 0 0 3px rgba(212, 175, 106, 0.1);
+}
+
+/* Rating hint */
+body.dark .rating-hint {
+  color: rgba(245, 241, 232, 0.5);
+}
+
+/* Submit button */
+body.dark .feedback-submit {
+  background: #b89554;
+  border-color: #b89554;
+  color: #11110f;
+}
+
+body.dark .feedback-submit:hover {
+  background: transparent;
+  color: #d4af6a;
+  border-color: #d4af6a;
+}
 /* ==========================================================
    CTA
    ========================================================== */
@@ -1100,8 +2214,8 @@ body.dark .value-row p {
 
   inset: 0;
 
-  background: url("../images/ourStory-page-photo/photo-1600607688969-a5bfcd646154.jpg")
-    center / cover no-repeat;
+  background: url("../images/landing-page-photo/cta-pic.jpeg") center / cover
+    no-repeat;
 
   pointer-events: none;
 }

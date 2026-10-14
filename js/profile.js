@@ -390,7 +390,43 @@ document.addEventListener("DOMContentLoaded", () => {
       status.textContent = booking.status || "Confirmed";
     }
   }
+  /* PAYMENT DETAILS */
 
+  const paymentTotalElement = document.getElementById("profilePaymentTotal");
+
+  const depositElement = document.getElementById("profileDepositAmount");
+
+  const remainingElement = document.getElementById("profileRemainingAmount");
+
+  const paymentStatusElement = document.getElementById("profilePaymentStatus");
+
+  /* GET SAVED PAYMENT AMOUNTS */
+
+  const totalAmount = Number(booking.total || booking.totalPrice || 0);
+
+  const deposit = Number(booking.depositAmount ?? totalAmount * 0.1);
+
+  const remaining = Number(booking.remainingAmount ?? totalAmount - deposit);
+
+  /* FORMAT AND DISPLAY AMOUNTS */
+
+  if (paymentTotalElement) {
+    paymentTotalElement.textContent = formatMoney(totalAmount);
+  }
+
+  if (depositElement) {
+    depositElement.textContent = formatMoney(deposit);
+  }
+
+  if (remainingElement) {
+    remainingElement.textContent = formatMoney(remaining);
+  }
+
+  /* PAYMENT STATUS */
+
+  if (paymentStatusElement) {
+    paymentStatusElement.textContent = booking.paymentStatus || "Pending";
+  }
   displayBooking();
 
   /* =========================================================

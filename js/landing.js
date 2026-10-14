@@ -7,7 +7,7 @@ const revealElm = document.querySelectorAll(
 );
 
 if (revealElm.length) {
-  const revealView = new IntersectionObserver(
+  const revealView = new IntersectionObserver( //IntersectionObserver detects when an element enters the user's viewport.
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

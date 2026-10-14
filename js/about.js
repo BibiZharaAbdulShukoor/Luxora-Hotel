@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
       () => {
         const rect = ctaImage.parentElement.getBoundingClientRect();
 
-        const offset = (window.innerHeight - rect.top) * 0.035;
+        const offset = (window.innerHeight - rect.top) * 0.045;
 
         ctaImage.style.transform = `translateY(${offset}px) scale(1.04)`;
       },

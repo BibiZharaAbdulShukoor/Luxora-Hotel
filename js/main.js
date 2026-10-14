@@ -179,8 +179,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     showToast(
-      "Your stay dates have been set. Explore our rooms to continue your booking.",
+      "Please choose your preferred room here and complete your booking.",
     );
+
+    // Save selected dates and guest count temporarily
+    const bookingSearch = {
+      checkIn: checkIn.value,
+      checkOut: checkOut.value,
+      guests: guestText,
+    };
+
+    sessionStorage.setItem(
+      "luxoraBookingSearch",
+      JSON.stringify(bookingSearch),
+    );
+
+    // Navigate to the rooms page
+    setTimeout(() => {
+      window.location.href = "rooms.html";
+    }, 1400);
   });
 
   /* ==========================================================

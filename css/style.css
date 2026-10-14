@@ -300,8 +300,8 @@ body.dark .loader > span {
 }
 
 .hero__media {
-  background: url("../images/main-page-photo/photo-1566073771259-6a8506099945.avif")
-    center / cover no-repeat;
+  background: url("../images/landing-page-photo/789.png") center / cover
+    no-repeat;
 
   transform: scale(1.07);
 
@@ -743,7 +743,8 @@ body.dark .loader > span {
 
 .about__image img {
   height: 550px;
-
+  border-radius: 25px 0 25px 0;
+  border: 1px solid var(--gold);
   object-fit: cover;
 }
 
@@ -758,7 +759,7 @@ body.dark .loader > span {
   background: var(--surface);
 
   color: var(--muted);
-
+  border-radius: 25px 0 25px 0;
   font: italic 15px var(--serif);
 }
 
@@ -798,7 +799,8 @@ body.dark .loader > span {
 
 .room-card {
   background: var(--surface);
-
+  border-radius: 25px 0 25px 0;
+  border: 1px solid var(--gold);
   min-width: 0;
 }
 
@@ -808,7 +810,8 @@ body.dark .loader > span {
 
 .room-card__image {
   position: relative;
-
+  border-radius: 25px 0 0 0;
+  border: 1px solid var(--line);
   display: block;
 
   height: 320px;
@@ -977,7 +980,7 @@ body.dark .loader > span {
 }
 
 .experience__image img {
-  height: 100%;
+  height: 900px;
   object-fit: cover;
 }
 
@@ -1238,7 +1241,8 @@ body.dark .experience__list span {
 
 .gallery-item img {
   height: 100%;
-
+  border-radius: 25px 0 25px 0;
+  border: 1px solid var(--gold);
   object-fit: cover;
 
   transition: transform 0.8s var(--ease);
@@ -1466,7 +1470,7 @@ body.dark .experience__list span {
 }
 
 .cta__media {
-  background: url("../images/main-page-photo/photo-1542314831-068cd1dbfeeb.avif")
+  background: url("../images/landing-page-photo/footer-background.jpeg")
     center / cover;
 }
 

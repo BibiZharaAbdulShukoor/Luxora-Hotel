@@ -54,19 +54,35 @@ button {
   position: absolute;
   inset: 0;
 
-  background-image: url(../images/landing-page-photo/photo-1564501049412-61c2a3083791.avif);
+  background-image: url("../images/landing-page-photo/landing-bg.png");
 
   background-size: cover;
   background-position: center;
+  transform: scale(1.07);
+  animation: heroZoom 14s ease forwards;
 }
 
+@keyframes heroZoom {
+  from {
+    transform: scale(1.07);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
 .hero-overlay {
   position: absolute;
   inset: 0;
 
   background:
-    linear-gradient(90deg, rgba(5, 5, 4, 0.82), rgba(5, 5, 4, 0.2)),
-    linear-gradient(0deg, rgba(5, 5, 4, 0.45), transparent 45%);
+    linear-gradient(
+      90deg,
+      rgba(4, 7, 5, 0.75) 0%,
+      rgba(4, 7, 5, 0.4) 48%,
+      rgba(4, 7, 5, 0.15) 100%
+    ),
+    linear-gradient(0deg, rgba(4, 7, 5, 0.56), transparent 44%);
 }
 
 .hero-content {
@@ -293,7 +309,7 @@ h2 em {
   position: absolute;
   inset: 0;
 
-  background-image: url("../images/landing-page-photo/photo-1582719478250-c89cae4dc85b.avif");
+  background-image: url("../images/landing-page-photo/room-dat-footer-bg.png");
 
   background-size: cover;
 
@@ -454,17 +470,17 @@ h2 em {
 }
 
 .room-one {
-  background-image: url("../images/landing-page-photo/photo-1590490360182-c33d57733427.avif");
+  background-image: url("../images/landing-page-photo/room-1.jpeg");
   height: 500px;
 }
 
 .room-two {
-  background-image: url("../images/landing-page-photo/photo-1566665797739-1674de7a421a.avif");
+  background-image: url("../images/landing-page-photo/room-3.jpeg");
   height: 440px;
 }
 
 .room-three {
-  background-image: url("../images/landing-page-photo/photo-1591088398332-8a7791972843.avif");
+  background-image: url("../images/landing-page-photo/room-4.jpeg");
   height: 400px;
 }
 
@@ -564,7 +580,7 @@ blockquote em {
 
   inset: 0;
 
-  background-image: url("../images/landing-page-photo/photo-1542314831-068cd1dbfeeb.avif");
+  background-image: url("../images/landing-page-photo/footer-background.jpeg");
 
   background-size: cover;
 

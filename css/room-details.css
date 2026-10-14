@@ -79,8 +79,8 @@ a {
 img {
   display: block;
   width: 100%;
-  border: 1px solid var(--gold-light);
-  border-radius: 20px;
+  border-radius: 25px 0 25px 0;
+  border: 1px solid var(--gold);
 }
 
 /* =========================================================
@@ -96,10 +96,19 @@ img {
   text-align: center;
   color: #fff;
 
-  background-image: url("../images/main-page-photo/photo-1611892440504-42a792e24d32.avif");
+  background-image: url("../images/landing-page-photo/room-dat-bg.png");
 
   background-size: cover;
   background-position: center;
+  transform: scale(1.07);
+
+  animation: heroZoom 14s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1);
+  }
 }
 
 .hero-overlay {
@@ -506,8 +515,8 @@ img {
 
   overflow: hidden;
 
-  border: 0 solid var(--gold-light);
-  border-radius: 20px;
+  border-radius: 25px 0 25px 0;
+  border: 1px solid var(--gold);
 
   padding: 0;
 
@@ -662,7 +671,7 @@ img {
 
   color: #fff;
 
-  background-image: url("../images/main-page-photo/photo-1540541338287-41700207dee6.avif");
+  background-image: url("../images/landing-page-photo/room-dat-footer-bg.png");
 
   background-size: cover;
 
@@ -792,7 +801,7 @@ img {
 
   border: 1px solid rgba(255, 255, 255, 0.25);
 
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(213, 207, 207, 0.08);
 
   color: #fff;
 

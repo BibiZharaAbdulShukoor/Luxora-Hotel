@@ -41,14 +41,33 @@ a {
 
   min-height: 100vh;
 
-  background: url("../images/landing-page-photo/photo-1542314831-068cd1dbfeeb.avif")
-    center / cover;
+  background: url("../images/landing-page-photo/room-5.jpeg") center / cover;
 
   color: white;
+
+  transform: scale(1.07);
+
+  animation: heroZoom 14s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1);
+  }
 }
 
 .signup-image {
-  background-image: url("../images/landing-page-photo/photo-1601918774946-25832a4be0d6.avif");
+  background-image: url("../images/landing-page-photo/sign.jpeg");
+
+  transform: scale(1.07);
+
+  animation: heroZoom 14s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1);
+  }
 }
 
 .image-overlay {

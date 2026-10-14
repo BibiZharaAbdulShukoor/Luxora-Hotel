@@ -37,11 +37,37 @@
       <!-- AUTH + THEME -->
       <div class="luxora-nav-actions">
         <div class="luxora-auth" id="luxAuth">
-          <a href="login.html" class="luxora-login" id="luxLogin"> Login </a>
+          <a href="login.html" class="luxora-login" id="luxLogin"> </a>
 
-          <a href="signup.html" class="luxora-signup" id="luxSignup">
-            Sign Up
-          </a>
+          <a href="login.html" class="luxora-signup" id="luxSignup"> Login </a>
+
+          <!-- USER DROPDOWN: Hidden until the user logs in -->
+          <div class="luxora-user-dropdown" id="luxUserDropdown" hidden>
+            <button
+              type="button"
+              class="luxora-user-btn"
+              id="luxUserBtn"
+              aria-label="User menu"
+              aria-expanded="false"
+              aria-controls="luxUserMenu"
+            >
+              <i class="fa-regular fa-user"></i>
+            </button>
+
+            <div class="luxora-user-menu" id="luxUserMenu" hidden>
+              <a href="profile.html" class="luxora-profile-link">
+                My Profile
+              </a>
+
+              <button
+                type="button"
+                class="luxora-dropdown-logout"
+                id="luxDropdownLogout"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
         </div>
 
         <button

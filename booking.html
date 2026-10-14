@@ -24,7 +24,13 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-
+    <!-- ==========================================================
+         FONT AWESOME
+         ========================================================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <!-- SHARED NAVBAR CSS -->
     <link rel="stylesheet" href="css/navbar.css" />
 
@@ -174,6 +180,7 @@
                   id="firstName"
                   placeholder="First name"
                   required
+                  readonly
                 />
 
                 <small class="error" id="firstNameError"></small>
@@ -187,6 +194,7 @@
                   id="lastName"
                   placeholder="Last name"
                   required
+                  readonly
                 />
 
                 <small class="error" id="lastNameError"></small>
@@ -203,6 +211,7 @@
                 id="email"
                 placeholder="you@example.com"
                 required
+                readonly
               />
 
               <small class="error" id="emailError"></small>
@@ -237,7 +246,82 @@
                 placeholder="Tell us anything that would make your stay special..."
               ></textarea>
             </div>
+            <!-- PAYMENT SECTION -->
 
+            <div class="form-divider">
+              <span>Payment Information</span>
+            </div>
+
+            <section class="payment-section">
+              <div class="payment-heading">
+                <span class="payment-icon">
+                  <i class="fa-solid fa-credit-card"></i>
+                </span>
+
+                <div>
+                  <h3>Secure Your Reservation</h3>
+                  <p>Pay 10% now and the remaining 90% at the hotel.</p>
+                </div>
+              </div>
+
+              <!-- PAYMENT METHOD -->
+
+              <div class="payment-method">
+                <label class="payment-option">
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="card"
+                    checked
+                  />
+
+                  <span class="payment-option-icon">
+                    <i class="fa-solid fa-credit-card"></i>
+                  </span>
+
+                  <span class="payment-option-text">
+                    <strong>Card Payment</strong>
+                    <small>Pay your 10% deposit now</small>
+                  </span>
+
+                  <span class="payment-check">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </span>
+                </label>
+              </div>
+
+              <!-- PAYMENT SUMMARY -->
+
+              <div class="payment-breakdown">
+                <div class="payment-row">
+                  <span>Total Reservation</span>
+                  <strong id="paymentTotal">$0.00</strong>
+                </div>
+
+                <div class="payment-row deposit-row">
+                  <span>Pay Now (10%)</span>
+                  <strong id="depositAmount">$0.00</strong>
+                </div>
+
+                <div class="payment-row">
+                  <span>Remaining at Hotel (90%)</span>
+                  <strong id="remainingAmount">$0.00</strong>
+                </div>
+              </div>
+
+              <!-- DEMO PAYMENT NOTICE -->
+
+              <div class="payment-notice">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>
+                  Secure your preferred room at LUXORA by paying a 10% deposit.
+                  Your chosen room will be reserved for you, and the remaining
+                  90% of the total reservation cost must be paid at the hotel
+                  during check-in.
+                </p>
+              </div>
+            </section>
             <!-- TERMS -->
 
             <label class="checkbox-label">
@@ -253,8 +337,11 @@
             <!-- CONFIRM -->
 
             <button type="submit" class="confirm-btn">
-              Confirm Reservation
-              <span>→</span>
+              <i class="fa-solid fa-lock"></i>
+
+              <span>Simulate 10% Payment & Confirm</span>
+
+              <i class="fa-solid fa-arrow-right"></i>
             </button>
           </form>
         </section>
@@ -275,7 +362,7 @@
               <div class="summary-image">
                 <img
                   id="summaryImage"
-                  src="images/main-page-photo/photo-1611892440504-42a792e24d32.avif"
+                  src="images/landing-page-photo/room-6.jpeg"
                   alt="Luxury suite"
                 />
               </div>

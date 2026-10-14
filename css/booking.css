@@ -86,8 +86,17 @@ button {
 
   background:
     linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.48)),
-    url("../images/landing-page-photo/photo-1564501049412-61c2a3083791.avif")
-      center / cover;
+    url("../images/landing-page-photo/booking-bg.png") center / cover;
+
+  transform: scale(1.07);
+
+  animation: heroZoom 14s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1);
+  }
 }
 
 .header-content {
@@ -148,7 +157,8 @@ button {
 .booking-form-card {
   background: var(--card);
   padding: 55px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gold);
+  border-radius: 25px 0 25px 0;
 }
 
 .form-heading {
@@ -325,7 +335,8 @@ button {
 .summary-card {
   background: var(--surface);
   padding: 40px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gold);
+  border-radius: 25px 0 25px 0;
 }
 
 .summary-card h2 {
@@ -353,8 +364,8 @@ button {
   height: 220px;
   overflow: hidden;
   margin-bottom: 20px;
-  border: ipx solid var(--gold);
-  border-radius: 20px;
+  border: 1px solid var(--gold);
+  border-radius: 25px 0 25px 0;
 }
 
 .summary-image img {
@@ -459,7 +470,8 @@ button {
 .help-card {
   margin-top: 20px;
   padding: 25px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gold);
+  border-radius: 25px 0 25px 0;
 
   display: flex;
   gap: 17px;
@@ -527,6 +539,8 @@ button {
   width: 100%;
 
   padding: 55px 45px;
+  border-radius: 20px;
+  border: 2px solid var(--gold);
 
   background: var(--card);
   text-align: center;
@@ -745,5 +759,232 @@ button {
 
   .success-card h2 {
     font-size: 43px;
+  }
+}
+/* =====================================================
+   PAYMENT SECTION
+===================================================== */
+
+.payment-section {
+  margin: 25px 0 30px;
+  padding: 25px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px 0 18px 0;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* PAYMENT HEADING */
+
+.payment-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.payment-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  color: var(--gold);
+  font-size: 18px;
+}
+
+.payment-heading h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.payment-heading p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* PAYMENT OPTION */
+
+.payment-method {
+  margin-bottom: 22px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.payment-option:hover {
+  transform: translateY(-2px);
+}
+
+.payment-option input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.payment-option-icon {
+  color: var(--gold);
+  font-size: 20px;
+}
+
+.payment-option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.payment-option-text strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.payment-option-text small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.payment-check {
+  color: var(--gold);
+  font-size: 18px;
+}
+
+/* PAYMENT BREAKDOWN */
+
+.payment-breakdown {
+  padding: 15px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.payment-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  font-size: 11px;
+}
+
+.payment-row span {
+  color: var(--muted);
+}
+
+.payment-row strong {
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.deposit-row {
+  margin: 5px 0;
+  padding: 14px;
+  background: var(--card);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+}
+
+.deposit-row span,
+.deposit-row strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* PAYMENT NOTICE */
+
+.payment-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 13px;
+  background: var(--card);
+  border-radius: 10px;
+}
+
+.payment-notice i {
+  margin-top: 3px;
+  color: var(--gold);
+  font-size: 14px;
+}
+
+.payment-notice p {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* PAYMENT BUTTON */
+
+.confirm-btn {
+  gap: 12px;
+}
+
+.confirm-btn i {
+  font-size: 13px;
+}
+
+/* =====================================================
+   PAYMENT RESPONSIVE
+===================================================== */
+
+@media (max-width: 520px) {
+  .payment-section {
+    padding: 18px 14px;
+  }
+
+  .payment-heading {
+    gap: 10px;
+  }
+
+  .payment-heading h3 {
+    font-size: 22px;
+  }
+
+  .payment-option {
+    padding: 13px 10px;
+    gap: 9px;
+  }
+
+  .payment-option-text strong {
+    font-size: 11px;
+  }
+
+  .payment-option-text small {
+    font-size: 9px;
+  }
+
+  .payment-row {
+    gap: 10px;
+    font-size: 10px;
+  }
+
+  .confirm-btn {
+    padding: 15px 10px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
   }
 }

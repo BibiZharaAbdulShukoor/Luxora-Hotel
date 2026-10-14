@@ -82,10 +82,19 @@ img {
 
   overflow: hidden;
 
-  background-image: url("../images/room-page-photo/photo-1564501049412-61c2a3083791.jpg");
+  background-image: url("../images/landing-page-photo/suites-bg.jpeg");
 
   background-size: cover;
   background-position: center;
+  transform: scale(1.07);
+
+  animation: heroZoom 14s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1);
+  }
 }
 
 /* Overlay */
@@ -553,7 +562,7 @@ img {
 
   inset: 0;
 
-  background-image: url("../images/room-page-photo/photo-1540541338287-41700207dee6.avif");
+  background-image: url("../images/landing-page-photo/footer-suit.png");
 
   background-size: cover;
 

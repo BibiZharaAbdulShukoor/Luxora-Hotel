@@ -41,6 +41,13 @@
          ===================================================== -->
 
     <link rel="stylesheet" href="css/navbar.css" />
+    <!-- ==========================================================
+         FONT AWESOME
+         ========================================================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
 
   <body class="about-page">
@@ -153,7 +160,7 @@
       <section class="about-story">
         <div class="about-story__image">
           <img
-            src="images/ourStory-page-photo/photo-1600607687920-4e2a09cf159d.jpg"
+            src="images/landing-page-photo/view.jpeg"
             alt="Luxury LUXORA interior"
           />
         </div>
@@ -391,6 +398,258 @@
       </section>
 
       <!-- ===================================================
+     REVIEWS & FEEDBACK
+     =================================================== -->
+
+      <section class="about-reviews section" id="reviews">
+        <div class="container">
+          <div class="reviews-heading">
+            <span class="eyebrow">YOUR EXPERIENCE MATTERS</span>
+
+            <h2>
+              Stories from our
+              <em>guests.</em>
+            </h2>
+
+            <p>
+              Every stay has a story. Share yours and help us make every LUXORA
+              experience even more memorable.
+            </p>
+          </div>
+
+          <!-- REVIEW SUMMARY -->
+
+          <div class="reviews-summary">
+            <div class="reviews-rating">
+              <strong id="averageRating">5.0</strong>
+
+              <div
+                class="review-stars"
+                id="averageStars"
+                aria-label="Average guest rating"
+              >
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <span id="reviewCount">Guest reviews</span>
+            </div>
+
+            <div class="reviews-summary-text">
+              <i class="fa-solid fa-quote-left"></i>
+
+              <p>
+                Your words help us create more thoughtful stays, meaningful
+                moments and exceptional hospitality.
+              </p>
+            </div>
+          </div>
+
+          <!-- REVIEW CARDS -->
+
+          <div class="reviews-grid" id="reviewsList">
+            <article class="review-card">
+              <div class="review-card-top">
+                <div class="review-avatar">S</div>
+
+                <div class="review-guest">
+                  <h3>Sarah M.</h3>
+                  <span>Sample guest review</span>
+                </div>
+
+                <i class="fa-solid fa-quote-right review-quote-icon"></i>
+              </div>
+
+              <div class="review-card-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="review-text">
+                The atmosphere was beautiful, the room was comfortable, and
+                every detail made the stay feel special.
+              </p>
+
+              <span class="review-date">Example review</span>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card-top">
+                <div class="review-avatar">D</div>
+
+                <div class="review-guest">
+                  <h3>Daniel R.</h3>
+                  <span>Sample guest review</span>
+                </div>
+
+                <i class="fa-solid fa-quote-right review-quote-icon"></i>
+              </div>
+
+              <div class="review-card-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="review-text">
+                A peaceful and elegant place to stay. The thoughtful service
+                made the whole experience memorable.
+              </p>
+
+              <span class="review-date">Example review</span>
+            </article>
+
+            <article class="review-card">
+              <div class="review-card-top">
+                <div class="review-avatar">A</div>
+
+                <div class="review-guest">
+                  <h3>Alex T.</h3>
+                  <span>Sample guest review</span>
+                </div>
+
+                <i class="fa-solid fa-quote-right review-quote-icon"></i>
+              </div>
+
+              <div class="review-card-stars" aria-label="5 out of 5 stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="review-text">
+                Beautiful interiors, a welcoming atmosphere and a wonderful
+                place to relax and recharge.
+              </p>
+
+              <span class="review-date">Example review</span>
+            </article>
+          </div>
+
+          <!-- FEEDBACK FORM -->
+
+          <div class="feedback-panel" id="feedback">
+            <div class="feedback-intro">
+              <span class="eyebrow">SHARE YOUR EXPERIENCE</span>
+
+              <h2>
+                We'd love to hear
+                <em>from you.</em>
+              </h2>
+
+              <p>
+                Tell us what made your stay special or how we can improve. Your
+                feedback matters to us.
+              </p>
+
+              <div class="feedback-note">
+                <i class="fa-regular fa-heart"></i>
+                Thank you for being part of the LUXORA story.
+              </div>
+            </div>
+
+            <form class="feedback-form" id="feedbackForm">
+              <div class="feedback-field">
+                <label for="guestName">Full name</label>
+
+                <input
+                  type="text"
+                  id="guestName"
+                  name="guestName"
+                  placeholder="Enter your name"
+                  maxlength="60"
+                  required
+                />
+              </div>
+
+              <div class="feedback-field">
+                <label for="guestEmail">Email address</label>
+
+                <input
+                  type="email"
+                  id="guestEmail"
+                  name="guestEmail"
+                  placeholder="you@example.com"
+                  maxlength="120"
+                  required
+                />
+              </div>
+
+              <div class="feedback-field">
+                <label>How was your experience?</label>
+
+                <div
+                  class="rating-picker"
+                  id="ratingPicker"
+                  role="group"
+                  aria-label="Choose a rating"
+                >
+                  <button type="button" data-rating="1" aria-label="1 star">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+
+                  <button type="button" data-rating="2" aria-label="2 stars">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+
+                  <button type="button" data-rating="3" aria-label="3 stars">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+
+                  <button type="button" data-rating="4" aria-label="4 stars">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+
+                  <button type="button" data-rating="5" aria-label="5 stars">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                </div>
+
+                <small id="ratingHint" class="rating-hint">
+                  Select your rating
+                </small>
+              </div>
+
+              <div class="feedback-field">
+                <label for="guestFeedback">Your feedback</label>
+
+                <textarea
+                  id="guestFeedback"
+                  name="guestFeedback"
+                  rows="5"
+                  maxlength="1000"
+                  placeholder="Tell us about your stay..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="feedback-submit">
+                Submit Feedback
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+
+              <p
+                id="feedbackMessage"
+                class="feedback-message"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================
            CTA
            =================================================== -->
 
@@ -428,5 +687,16 @@
 
     <script src="js/about.js"></script>
     <script src="js/footer.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- SweetAlert2 Library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Review JavaScript -->
+    <script src="js/review.js"></script>
   </body>
 </html>

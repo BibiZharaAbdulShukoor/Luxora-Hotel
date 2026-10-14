@@ -10,7 +10,7 @@ const ourRooms = {
   "grand-suite": {
     title: "Grand Luxury Suite",
     subtitle: "An elegant private sanctuary designed for unforgettable stays.",
-    image: "../images/room-page-photo/photo-1611892440504-42a792e24d32.avif",
+    image: "../images/landing-page-photo/room-2.jpeg",
     description:
       "Step into an expansive sanctuary where refined interiors, natural textures and contemporary comforts create an atmosphere of effortless luxury. The Grand Luxury Suite offers generous living space and beautiful views for a truly exceptional stay.",
     size: "78 m²",
@@ -22,7 +22,7 @@ const ourRooms = {
   "terrace-room": {
     title: "Terrace Room",
     subtitle: "A sophisticated retreat opening onto a private terrace.",
-    image: "../images/room-page-photo/photo-1566665797739-1674de7a421a.avif",
+    image: "../images/landing-page-photo/room-3.jpeg",
     description:
       "A warm and sophisticated room opening onto a private terrace with beautiful city views. Designed with soft textures and refined details for a peaceful escape.",
     size: "46 m²",
@@ -34,7 +34,7 @@ const ourRooms = {
   "city-residence": {
     title: "City Residence",
     subtitle: "A spacious residential-style retreat for effortless living.",
-    image: "../images/room-page-photo/photo-1600607687939-ce8a6c25118c.avif",
+    image: "../images/landing-page-photo/room-4.jpeg",
     description:
       "A spacious residential-style retreat designed for extended stays and effortless living, combining generous space, contemporary elegance and the comfort of a private home.",
     size: "96 m²",
@@ -46,7 +46,7 @@ const ourRooms = {
   "presidential-suite": {
     title: "Presidential Suite",
     subtitle: "Our most prestigious suite for an extraordinary stay.",
-    image: "../images/room-page-photo/photo-1590490360182-c33d57733427.avif",
+    image: "../images/landing-page-photo/room-6.jpeg",
     description:
       "Our most prestigious suite combines extraordinary space, private dining and exceptional panoramic views. Every detail has been designed around privacy and sophisticated comfort.",
     size: "142 m²",
@@ -58,7 +58,7 @@ const ourRooms = {
   "deluxe-room": {
     title: "Deluxe King Room",
     subtitle: "A refined retreat with contemporary elegance.",
-    image: "../images/room-page-photo/photo-1618221195710-dd6b41faaea6.avif",
+    image: "../images/landing-page-photo/room-1.jpeg",
     description:
       "A refined retreat with contemporary details, soft textures and everything you need for a restful stay. Elegant simplicity meets thoughtful comfort.",
     size: "38 m²",
@@ -70,7 +70,7 @@ const ourRooms = {
   "family-residence": {
     title: "Family Residence",
     subtitle: "A generous private residence designed for families.",
-    image: "../images/room-page-photo/photo-1600607687920-4e2a09cf159d.avif",
+    image: "../images/landing-page-photo/room-5.jpeg",
     description:
       "A generous private residence designed for families, featuring multiple bedrooms, a comfortable living area and everything needed for a relaxing extended stay.",
     size: "118 m²",
